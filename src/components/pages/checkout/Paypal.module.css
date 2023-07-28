@@ -1,0 +1,135 @@
+.section {
+  padding: 6rem 4rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  animation: var(--animation-fade-in);
+}
+
+.title {
+  margin: 4rem 0;
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--black);
+  opacity: .85;
+}
+
+.products {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem;
+}
+
+.form {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.4rem;
+  color: var(--black);
+}
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.containerInput label {
+  opacity: .85;
+}
+
+.containerInput input {
+  padding: 1rem;
+  border: 2px solid var(--dark-grey);
+  border-radius: .5rem;
+  outline: none;
+  transition: .3s;
+}
+
+.containerInput input:focus {
+  border: 2px solid #007acd;
+  box-shadow: 0px 1px 8px -3px #185296;
+}
+
+.payButton {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #003087;
+  background-color: #ffc439;
+  border: 0;
+  border-radius: .5rem;
+  padding: 1.2rem 4rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.payButton:hover {
+  background-color: #e9b43a;
+}
+
+span {
+  color: #0f9ed4;
+}
+
+.col2 {
+  border: 2px solid var(--dark-grey);
+  border-radius: .5rem;
+  padding: 2rem;
+}
+
+.containerProduct {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerProduct img {
+  width: 30px;
+  border-radius: .5rem;
+  border: 1px solid var(--dark-grey);
+}
+
+.containerProduct h3 {
+  font-size: 1.4rem;
+  color: var(--black);
+  opacity: .85;
+  width: 50%;
+}
+
+.totalPrice {
+  margin-top: 4rem;
+  font-size: 1.4rem;
+  color: #008b51;
+  text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .form {
+    margin-top: 0;
+  }
+}

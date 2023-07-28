@@ -1,0 +1,52 @@
+.section {
+  padding: 6rem 4rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  animation: var(--animation-fade-in);
+}
+
+.title {
+  margin: 4rem 0;
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.image {
+  width: 100%;
+}
+
+.helpParagraph {
+  color: #008b51;
+}
+
+@media screen and (max-width: 820px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    width: 50%;
+    transform: translateX(-2rem);
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  padding-right: 2rem;
+  margin-left: 1rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-left: 2rem;
+}
+
+.number {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  font-size: 1.6rem;
+  color: var(--black);
+}

@@ -1,0 +1,22 @@
+.button {
+  font-size: 1.5rem;
+  color: var(--black);
+  opacity: .75;
+  transition: .3s;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: .95;
+}
+
+.icon {
+  vertical-align: middle;
+  transition: .3s;
+}
+
+.button:hover .icon {
+  transform: translateX(-5px);
+}

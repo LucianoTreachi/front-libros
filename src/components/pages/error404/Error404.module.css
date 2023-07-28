@@ -1,0 +1,23 @@
+.section {
+  padding: 6rem 4rem;
+  min-height: 100vh;
+  animation: var(--animation-fade-in);
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  margin-top: 4rem;
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 574px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}

@@ -1,0 +1,17 @@
+.logo {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--black);
+  opacity: .85;
+  margin-right: auto;
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 574px) {
+  .logo {
+    font-size: 2.2rem;
+  }
+}
