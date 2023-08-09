@@ -9,10 +9,6 @@ export default function CounterContainer({ stock, onAdd, totalQuantity }) {
   function increment() {
     if (count != 0 && count < stock) {
       setCount(count + 1);
-    } else if (stock == 0) {
-      alert("No tenemos stock de este producto");
-    } else {
-      alert("Tenemos solo " + stock + " unidades disponibles");
     }
   }
 
