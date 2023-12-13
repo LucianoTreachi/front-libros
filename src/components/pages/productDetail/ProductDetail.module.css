@@ -1,11 +1,11 @@
 .section {
   padding: 6rem 4rem;
-  animation: var(--animation-fade-in);
 }
 
 .container {
   max-width: 1000px;
   margin: auto;
+  animation: var(--animation-fade-in);
 }
 
 .title {

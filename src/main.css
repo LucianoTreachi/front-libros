@@ -1,8 +1,6 @@
 /* GLOBAL STYLES */
 
 :root {
-  scroll-behavior: smooth;
-
   --white: #f8f5f8;
   --black: #2b2a2a;
   --dark-grey: #b9b9b9;
