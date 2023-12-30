@@ -9,6 +9,7 @@
 ## ⚡ Tecnologías Utilizadas
 
 - Vite + React Js
+- CSS Modules
 - Cloudinary
 - Firebase
 
