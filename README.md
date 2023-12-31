@@ -2,17 +2,17 @@
   <img src="https://raw.githubusercontent.com/LucianoTreachi/Ecommerce-FrontLibros/main/readmeBanner.jpg" width="100%" alt="Banner"/>
 </div>
 
-## ✅ Descripción del proyecto
+### ✅ Proyecto
 
-- Diseñé y desarrollé un pequeño e-commerce que vende libros de Desarrollo Frontend. La aplicación web es 100% responsive, se adapta perfectamente a cualquier dispositivo: escritorio, tablet y móvil. Todas las imagenes del proyecto se alojan en Cloudinary, servicio de gestión de imágenes y videos basados ​​en la nube. La aplicación se conecta al servicio de base de datos de Firebase para hacer manejo de stock, y también para mostrar el número de seguimiento de compra al usuario.
+- Diseñé y desarrollé un e-commerce de libros de Desarrollo Frontend. La web es 100% responsive, se adapta a cualquier dispositivo. Las imágenes se alojan en Cloudinary, servicio de gestión en la nube. La app se conecta a Firebase para manejo de stock y seguimiento de compra.
 
-## ⚡ Tecnologías Utilizadas
+### ⚡ Tecnologías Utilizadas
 
 - Vite + React Js
 - CSS Modules
 - Cloudinary
 - Firebase
 
-## 👽 Autor
+### 👽 Autor
 
 - Luciano Treachi
