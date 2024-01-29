@@ -33,6 +33,7 @@
 
 .image {
   width: 100%;
+  height: auto;
   display: block;
   animation: var(--animation-fade-in);
 }

@@ -74,6 +74,8 @@ export default function HowToBuy() {
               src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1689871850/ecommerce-libros/howToBuy_ap00qx.jpg"
               alt="Imagen de la sección Cómo Comprar"
               className={styles.image}
+              width={500}
+              height={500}
             />
           </div>
         </div>

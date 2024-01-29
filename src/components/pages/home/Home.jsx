@@ -21,6 +21,8 @@ export default function Home() {
               className={styles.image}
               src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
               alt="Imagen del Home"
+              width={1080}
+              height={704}
             />
           </div>
         </div>

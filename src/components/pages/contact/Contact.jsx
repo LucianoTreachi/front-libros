@@ -67,6 +67,8 @@ export default function Contact({
               src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1689871850/ecommerce-libros/contact_peuoos.jpg"
               alt="Imagen de la sección Contacto"
               className={styles.image}
+              width={500}
+              height={500}
             />
           </div>
         </div>

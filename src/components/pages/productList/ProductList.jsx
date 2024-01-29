@@ -79,7 +79,12 @@ export default function ProductList({
         <div className={styles.shop}>
           {products.map((product) => (
             <Link to={`/producto/${product.id}`} key={product.id}>
-              <img src={product.image} alt={product.title} />
+              <img
+                src={product.image}
+                alt={product.title}
+                width={640}
+                height={900}
+              />
             </Link>
           ))}
         </div>

@@ -54,6 +54,7 @@
 
 .shop img {
   width: 100%;
+  height: auto;
   border: 2px solid var(--dark-grey);
   transition: .3s;
 }
