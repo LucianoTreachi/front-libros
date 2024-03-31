@@ -41,8 +41,9 @@
 }
 
 .active {
-  color: var(--white);
-  background-color: #007acd;
+  font-weight: 600;
+  color: #0f50a7;
+  background-color: #d4e4fa;
 }
 
 .shop {
