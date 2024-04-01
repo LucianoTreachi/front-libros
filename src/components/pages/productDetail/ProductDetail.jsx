@@ -19,6 +19,8 @@ export default function ProductDetail({
               src={selectedProduct.image}
               alt={selectedProduct.title}
               className={styles.productImage}
+              width={640}
+              height={900}
             />
           </div>
           <div className={styles.col2}>

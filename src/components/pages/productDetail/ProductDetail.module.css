@@ -23,6 +23,7 @@
 
 .productImage {
   width: 80%;
+  height: auto;
   border: 2px solid var(--dark-grey);
 }
 
