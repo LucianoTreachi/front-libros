@@ -20,7 +20,7 @@ export default function Home() {
             <picture>
               <source
                 media="(max-width: 574px)"
-                srcSet="https://res.cloudinary.com/dwqk2mkgh/image/upload/w_500/f_auto,q_auto/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
+                srcSet="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/w_500/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
               />
               <img
                 className={styles.image}
