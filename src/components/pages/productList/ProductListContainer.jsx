@@ -11,6 +11,9 @@ export default function ProductListContainer() {
   // Crear un estado para mostrar los productos
   const [products, setProducts] = useState([]);
 
+  // Crear un estado para mostrar un loading
+  const [isLoading, setIsLoading] = useState(true);
+
   // Crear un estado para mostrar la categoría activa
   const [activeCategory, setActiveCategory] = useState("Todos");
 
@@ -34,12 +37,17 @@ export default function ProductListContainer() {
     }
 
     // Traer toda la información de los documentos de la base de datos
-    getDocs(consultation).then((response) => {
-      let documents = response.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+    getDocs(consultation)
+      .then((response) => {
+        let documents = response.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setProducts(documents);
+      })
+      .finally(() => {
+        // Después de que se hayan cargado los productos, establecer isLoading en false
+        setIsLoading(false);
       });
-      setProducts(documents);
-    });
   }, [categoryName]);
 
   return (
@@ -47,6 +55,7 @@ export default function ProductListContainer() {
       products={products}
       activeCategory={activeCategory}
       setActiveCategory={setActiveCategory}
+      isLoading={isLoading}
     />
   );
 }

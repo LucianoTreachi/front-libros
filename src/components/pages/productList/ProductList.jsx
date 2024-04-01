@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import CardSkeleton from "../../common/cardSkeleton/CardSkeleton";
 import styles from "./ProductList.module.css";
 
 export default function ProductList({
   products,
   activeCategory,
   setActiveCategory,
+  isLoading,
 }) {
   return (
     <section className={styles.section}>
@@ -77,6 +79,8 @@ export default function ProductList({
           </Link>
         </div>
         <div className={styles.shop}>
+          {isLoading && <CardSkeleton cards={12} />}
+
           {products.map((product) => (
             <Link to={`/producto/${product.id}`} key={product.id}>
               <img
