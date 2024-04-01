@@ -83,12 +83,16 @@ export default function ProductList({
 
           {products.map((product) => (
             <Link to={`/producto/${product.id}`} key={product.id}>
-              <img
-                src={product.image}
-                alt={product.title}
-                width={640}
-                height={900}
-              />
+              <picture>
+                <source media="(max-width: 574px)" srcSet={product.image300} />
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  width={640}
+                  height={900}
+                  loading="lazy"
+                />
+              </picture>
             </Link>
           ))}
         </div>

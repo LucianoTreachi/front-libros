@@ -17,13 +17,19 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <img
-              className={styles.image}
-              src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
-              alt="Imagen del Home"
-              width={1080}
-              height={704}
-            />
+            <picture>
+              <source
+                media="(max-width: 574px)"
+                srcSet="https://res.cloudinary.com/dwqk2mkgh/image/upload/w_500/f_auto,q_auto/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
+              />
+              <img
+                className={styles.image}
+                src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
+                alt="Imagen del Home"
+                width={1080}
+                height={704}
+              />
+            </picture>
           </div>
         </div>
       </section>
