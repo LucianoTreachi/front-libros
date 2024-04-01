@@ -23,8 +23,8 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.2px;
+  font-family: system-ui;
+  letter-spacing: 0.025em;
 }
 
 a {
@@ -44,9 +44,9 @@ button {
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--black);
-  line-height: 1.5em;
+  line-height: 1.5;
   opacity: .9;
 }
 
