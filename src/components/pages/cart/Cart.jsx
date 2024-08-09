@@ -32,7 +32,7 @@ export default function Cart({
             <div className={styles.col2}>
               <img
                 src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1689878533/ecommerce-libros/emptyCart_gugs2a.jpg"
-                alt="Imagen de carrito vacío"
+                alt=""
                 className={styles.image}
                 width={500}
                 height={440}

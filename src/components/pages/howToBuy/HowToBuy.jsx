@@ -72,7 +72,7 @@ export default function HowToBuy() {
           <div className={styles.col2}>
             <img
               src="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/v1689871850/ecommerce-libros/howToBuy_ap00qx.jpg"
-              alt="Imagen de la sección Cómo Comprar"
+              alt=""
               className={styles.image}
               width={500}
               height={500}
