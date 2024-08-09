@@ -51,6 +51,7 @@ export default function Cart({
                     <Link
                       to={`/producto/${cartProduct.id}`}
                       className={styles.buttonImage}
+                      aria-label="Ver producto"
                     >
                       Ver →
                     </Link>
