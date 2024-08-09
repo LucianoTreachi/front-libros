@@ -62,16 +62,6 @@
   border: 2px solid var(--dark-grey);
 }
 
-.buttonImage {
-  display: block;
-  width: max-content;
-  margin-top: .5rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #005c9a;
-  text-align: center;
-}
-
 .containerProduct h3 {
   font-size: 1.7rem;
   color: var(--black);

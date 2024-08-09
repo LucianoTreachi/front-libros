@@ -45,15 +45,11 @@ export default function Cart({
               return (
                 <div key={cartProduct.id} className={styles.containerProduct}>
                   <div className={styles.containerImage}>
-                    <Link to={`/producto/${cartProduct.id}`}>
-                      <img src={cartProduct.image} alt={cartProduct.title} />
-                    </Link>
                     <Link
                       to={`/producto/${cartProduct.id}`}
-                      className={styles.buttonImage}
-                      aria-label="Ver producto"
+                      aria-label={`Ver producto: ${cartProduct.title}`}
                     >
-                      Ver →
+                      <img src={cartProduct.image} alt={cartProduct.title} />
                     </Link>
                   </div>
                   <h3>{cartProduct.title}</h3>
@@ -67,7 +63,7 @@ export default function Cart({
                   <button
                     className={styles.deleteProductButton}
                     onClick={() => handleDeleteProduct(cartProduct.id)}
-                    aria-label="Eliminar producto"
+                    aria-label={`Eliminar producto: ${cartProduct.title}`}
                   >
                     <BsFillTrash3Fill className={styles.trashIcon} />
                   </button>
