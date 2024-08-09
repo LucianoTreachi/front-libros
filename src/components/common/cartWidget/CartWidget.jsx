@@ -13,8 +13,8 @@ export default function CartWidget() {
 
   return (
     <div className={styles.container}>
-      <Link to="/carrito">
-        <BsCart className={styles.icon} aria-label="Ir al carrito de compras" />
+      <Link to="/carrito" aria-label="Ir al carrito de compras">
+        <BsCart className={styles.icon} />
       </Link>
       <span className={styles.number}>{totalCartWidgetNumber}</span>
     </div>
