@@ -14,7 +14,7 @@ export default function Counter({
         <button
           className={styles.counterButton}
           onClick={decrement}
-          aria-label="Disminuir la cantidad del producto."
+          aria-label={`Disminuir la cantidad del producto. Tienes ${count}. Las unidades disponibles de este producto son: ${stock}.`}
         >
           -
         </button>
@@ -22,7 +22,7 @@ export default function Counter({
         <button
           className={styles.counterButton}
           onClick={increment}
-          aria-label="Aumentar la cantidad del producto."
+          aria-label={`Aumentar la cantidad del producto. Tienes ${count}. Las unidades disponibles de este producto son: ${stock}.`}
         >
           +
         </button>
@@ -63,7 +63,11 @@ export default function Counter({
 
       {/* Si el stock es mayor 0, mostrar el botón de "Agregar al carrito". De lo contrario mostrar un mensaje. */}
       {stock > 0 ? (
-        <button className={styles.addToCartButton} onClick={() => onAdd(count)}>
+        <button
+          className={styles.addToCartButton}
+          onClick={() => onAdd(count)}
+          aria-label={`Agregar al carrito: ${count}`}
+        >
           Agregar al carrito
         </button>
       ) : (
