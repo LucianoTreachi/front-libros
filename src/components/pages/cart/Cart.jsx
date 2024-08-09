@@ -64,10 +64,13 @@ export default function Cart({
                     <b>Precio:</b> ${" "}
                     {(cartProduct.price * cartProduct.quantity).toFixed(2)}
                   </p>
-                  <BsFillTrash3Fill
+                  <button
+                    className={styles.deleteProductButton}
                     onClick={() => handleDeleteProduct(cartProduct.id)}
-                    className={styles.trashIcon}
-                  />
+                    aria-label="Eliminar producto"
+                  >
+                    <BsFillTrash3Fill className={styles.trashIcon} />
+                  </button>
                 </div>
               );
             })}

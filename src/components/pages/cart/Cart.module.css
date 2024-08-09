@@ -79,14 +79,19 @@
   width: 30%;
 }
 
+.deleteProductButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .trashIcon {
   font-size: 2rem;
   color: #db1436;
-  cursor: pointer;
   transition: .3s;
 }
 
-.trashIcon:hover {
+.deleteProductButton:hover .trashIcon {
   transform: scale(1.2);
 }
 
