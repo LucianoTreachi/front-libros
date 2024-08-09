@@ -11,11 +11,19 @@ export default function Counter({
   return (
     <div>
       <div className={styles.containerButtons}>
-        <button className={styles.counterButton} onClick={decrement}>
+        <button
+          className={styles.counterButton}
+          onClick={decrement}
+          aria-label="Disminuir la cantidad del producto."
+        >
           -
         </button>
         <span className={styles.number}>{count}</span>
-        <button className={styles.counterButton} onClick={increment}>
+        <button
+          className={styles.counterButton}
+          onClick={increment}
+          aria-label="Aumentar la cantidad del producto."
+        >
           +
         </button>
       </div>
