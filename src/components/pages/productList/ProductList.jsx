@@ -15,6 +15,7 @@ export default function ProductList({
         <h3 className={styles.subtitle}>Selecciona una categoría</h3>
         <div className={styles.containerCategoryButtons}>
           <Link
+            aria-label="Todos los libros"
             to="/"
             onClick={() => setActiveCategory("Todos")}
             className={`${styles.ButtonCategory} ${
@@ -24,6 +25,7 @@ export default function ProductList({
             Todos
           </Link>
           <Link
+            aria-label="Libros de HTML"
             to="/categoria/HTML"
             onClick={() => setActiveCategory("HTML")}
             className={`${styles.ButtonCategory} ${
@@ -33,6 +35,7 @@ export default function ProductList({
             HTML
           </Link>
           <Link
+            aria-label="Libros de CSS"
             to="/categoria/CSS"
             onClick={() => setActiveCategory("CSS")}
             className={`${styles.ButtonCategory} ${
@@ -42,6 +45,7 @@ export default function ProductList({
             CSS
           </Link>
           <Link
+            aria-label="Libros de JavaScript"
             to="/categoria/JavaScript"
             onClick={() => setActiveCategory("JavaScript")}
             className={`${styles.ButtonCategory} ${
@@ -51,6 +55,7 @@ export default function ProductList({
             JavaScript
           </Link>
           <Link
+            aria-label="Libros de React"
             to="/categoria/React"
             onClick={() => setActiveCategory("React")}
             className={`${styles.ButtonCategory} ${
@@ -60,6 +65,7 @@ export default function ProductList({
             React
           </Link>
           <Link
+            aria-label="Libros de Svelte"
             to="/categoria/Svelte"
             onClick={() => setActiveCategory("Svelte")}
             className={`${styles.ButtonCategory} ${
@@ -69,6 +75,7 @@ export default function ProductList({
             Svelte
           </Link>
           <Link
+            aria-label="Libros de Testing"
             to="/categoria/Testing"
             onClick={() => setActiveCategory("Testing")}
             className={`${styles.ButtonCategory} ${
