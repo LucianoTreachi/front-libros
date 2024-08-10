@@ -15,11 +15,12 @@ export default function CartWidget() {
     <div className={styles.container}>
       <Link
         to="/carrito"
+        className={styles.cartLink}
         aria-label={`Ir al carrito de compras. Cantidad de productos agregados: ${totalCartWidgetNumber}.`}
       >
-        <BsCart className={styles.icon} />
+        <BsCart className={styles.cartIcon} />
       </Link>
-      <span className={styles.number}>{totalCartWidgetNumber}</span>
+      <span className={styles.cartNumber}>{totalCartWidgetNumber}</span>
     </div>
   );
 }
