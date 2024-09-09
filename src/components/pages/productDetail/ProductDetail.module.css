@@ -25,6 +25,7 @@
   width: 80%;
   height: auto;
   border: 2px solid var(--dark-grey);
+  border-radius: 1rem;
 }
 
 .col2 {
