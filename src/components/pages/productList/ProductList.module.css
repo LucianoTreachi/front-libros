@@ -32,6 +32,10 @@
   width: 150px;
 }
 
+.selectCategory:focus {
+  outline: 2px solid #ea7123;
+}
+
 .shop {
   margin-top: 6rem;
   display: grid;
