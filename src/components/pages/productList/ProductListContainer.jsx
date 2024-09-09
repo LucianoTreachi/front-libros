@@ -1,13 +1,9 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import ProductList from "./ProductList";
 
 export default function ProductListContainer() {
-  // Obtener la ruta dinámica categoryName
-  const { categoryName } = useParams();
-
   // Crear un estado para mostrar los productos
   const [products, setProducts] = useState([]);
 
@@ -19,36 +15,36 @@ export default function ProductListContainer() {
 
   useEffect(() => {
     // Traer la colección "products" de Firestore
-    let productsCollection = collection(db, "products");
+    const productsCollection = collection(db, "products");
 
-    // Declarar una variable sin valor para luego utilizarla en la consulta a la base de datos
+    // Declarar una variable para la consulta
     let consultation;
 
-    // Si categoryName es false mostrar todos los productos
-    if (!categoryName) {
+    // Si activeCategory es "Todos", mostrar todos los productos
+    if (activeCategory === "Todos") {
       consultation = productsCollection;
-    }
-    // Si categoryName es true, realizar una consulta a la base de datos y filtrar por la categoría del producto
+    } 
+    // Si hay una categoría seleccionada, filtrar los productos por esa categoría
     else {
       consultation = query(
         productsCollection,
-        where("category", "==", categoryName)
+        where("category", "==", activeCategory)
       );
     }
 
-    // Traer toda la información de los documentos de la base de datos
+    // Realizar la consulta a Firestore
+    setIsLoading(true); // Activar loading antes de traer los datos
     getDocs(consultation)
       .then((response) => {
-        let documents = response.docs.map((doc) => {
+        const documents = response.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });
         setProducts(documents);
       })
       .finally(() => {
-        // Después de que se hayan cargado los productos, establecer isLoading en false
-        setIsLoading(false);
+        setIsLoading(false); // Desactivar loading después de traer los datos
       });
-  }, [categoryName]);
+  }, [activeCategory]); // El efecto se ejecuta cuando cambia la categoría activa
 
   return (
     <ProductList

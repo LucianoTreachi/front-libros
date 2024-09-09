@@ -8,82 +8,31 @@ export default function ProductList({
   setActiveCategory,
   isLoading,
 }) {
+  // Manejador de eventos para cambiar la categoría seleccionada
+  const handleCategoryChange = (e) => {
+    setActiveCategory(e.target.value);
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Tienda</h2>
         <h3 className={styles.subtitle}>Selecciona una categoría</h3>
-        <div className={styles.containerCategoryButtons}>
-          <Link
-            aria-label="Todos los libros"
-            to="/"
-            onClick={() => setActiveCategory("Todos")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "Todos" ? styles.active : ""
-            }`}
+        <div className={styles.containerCategorySelect}>
+          <select
+            aria-label="Seleccionar categoría"
+            value={activeCategory}
+            onChange={handleCategoryChange}
+            className={styles.selectCategory}
           >
-            Todos
-          </Link>
-          <Link
-            aria-label="Libros de HTML"
-            to="/categoria/HTML"
-            onClick={() => setActiveCategory("HTML")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "HTML" ? styles.active : ""
-            }`}
-          >
-            HTML
-          </Link>
-          <Link
-            aria-label="Libros de CSS"
-            to="/categoria/CSS"
-            onClick={() => setActiveCategory("CSS")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "CSS" ? styles.active : ""
-            }`}
-          >
-            CSS
-          </Link>
-          <Link
-            aria-label="Libros de JavaScript"
-            to="/categoria/JavaScript"
-            onClick={() => setActiveCategory("JavaScript")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "JavaScript" ? styles.active : ""
-            }`}
-          >
-            JavaScript
-          </Link>
-          <Link
-            aria-label="Libros de React"
-            to="/categoria/React"
-            onClick={() => setActiveCategory("React")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "React" ? styles.active : ""
-            }`}
-          >
-            React
-          </Link>
-          <Link
-            aria-label="Libros de Svelte"
-            to="/categoria/Svelte"
-            onClick={() => setActiveCategory("Svelte")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "Svelte" ? styles.active : ""
-            }`}
-          >
-            Svelte
-          </Link>
-          <Link
-            aria-label="Libros de Testing"
-            to="/categoria/Testing"
-            onClick={() => setActiveCategory("Testing")}
-            className={`${styles.ButtonCategory} ${
-              activeCategory === "Testing" ? styles.active : ""
-            }`}
-          >
-            Testing
-          </Link>
+            <option value="Todos">Todos</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="React">React</option>
+            <option value="Svelte">Svelte</option>
+            <option value="Testing">Testing</option>
+          </select>
         </div>
         <div className={styles.shop}>
           {isLoading && <CardSkeleton cards={12} />}

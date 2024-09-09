@@ -21,29 +21,15 @@
   font-weight: 500;
 }
 
-.containerCategoryButtons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.ButtonCategory {
-  font-size: 1.4rem;
-  padding: 1rem 2rem;
+.selectCategory {
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  opacity: .8;
   border-radius: 1rem;
-  background-color: var(--light-grey);
-  cursor: pointer;
-  transition: .3s;
-}
-
-.ButtonCategory:hover {
-  opacity: .75;
-}
-
-.active {
-  font-weight: 600;
-  color: #0f50a7;
-  background-color: #d4e4fa;
+  border: 2px solid #ccc;
+  background-color: white;
+  width: 200px;
 }
 
 .shop {
@@ -83,5 +69,9 @@
   .shop {
     margin-top: 4rem;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .selectCategory {
+    width: 100%;
   }
 }

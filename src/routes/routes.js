@@ -13,11 +13,6 @@ export const routes = [
     Element: Home
   },
   {
-    id: "categories",
-    path: "/categoria/:categoryName",
-    Element: Home
-  },
-  {
     id: "product",
     path: "/producto/:id",
     Element: ProductDetailContainer
