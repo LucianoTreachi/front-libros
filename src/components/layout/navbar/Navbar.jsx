@@ -10,31 +10,21 @@ export default function Navbar({ isOpen, toggleMenu }) {
       <nav className={styles.navbar}>
         <Logo />
 
-        <ul className={`${styles.menu} ${isOpen && styles.open}`}>
+        <div className={`${styles.menu} ${isOpen && styles.open}`}>
           <AiOutlineClose
             className={styles.closeMenuIcon}
             onClick={toggleMenu}
           />
-          <li>
-            <Link to="/" className={styles.link} onClick={toggleMenu}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/como-comprar"
-              className={styles.link}
-              onClick={toggleMenu}
-            >
-              Cómo comprar
-            </Link>
-          </li>
-          <li>
-            <Link to="/contacto" className={styles.link} onClick={toggleMenu}>
-              Contacto
-            </Link>
-          </li>
-        </ul>
+          <Link to="/" className={styles.link} onClick={toggleMenu}>
+            Inicio
+          </Link>
+          <Link to="/como-comprar" className={styles.link} onClick={toggleMenu}>
+            Cómo comprar
+          </Link>
+          <Link to="/contacto" className={styles.link} onClick={toggleMenu}>
+            Contacto
+          </Link>
+        </div>
 
         <CartWidget />
 
