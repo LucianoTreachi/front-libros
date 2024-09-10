@@ -20,6 +20,7 @@ export default function ProductList({
         <h3 className={styles.subtitle}>Selecciona una categoría</h3>
         <div className={styles.containerCategorySelect}>
           <select
+            id="select"
             aria-label="Seleccionar categoría"
             value={activeCategory}
             onChange={handleCategoryChange}
