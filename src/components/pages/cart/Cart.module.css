@@ -73,6 +73,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  width: max-content;
 }
 
 .trashIcon {
