@@ -11,10 +11,16 @@ export default function Navbar({ isOpen, toggleMenu }) {
         <Logo />
 
         <div className={`${styles.menu} ${isOpen && styles.open}`}>
-          <AiOutlineClose
-            className={styles.closeMenuIcon}
+          {/* Close menu button */}
+          <button
+            className={styles.closeMenuButton}
             onClick={toggleMenu}
-          />
+            aria-label="Cerrar Menú"
+          >
+            <AiOutlineClose />
+          </button>
+
+          {/* Links */}
           <Link to="/" className={styles.link} onClick={toggleMenu}>
             Inicio
           </Link>
@@ -26,10 +32,17 @@ export default function Navbar({ isOpen, toggleMenu }) {
           </Link>
         </div>
 
+        {/* Cart button */}
         <CartWidget />
 
-        {/* Hamburger Menu */}
-        <AiOutlineMenu className={styles.openMenuIcon} onClick={toggleMenu} />
+        {/* Open menu button */}
+        <button
+          className={styles.openMenuButton}
+          onClick={toggleMenu}
+          aria-label="Menú"
+        >
+          <AiOutlineMenu />
+        </button>
       </nav>
       {/* Overlay */}
       <div
