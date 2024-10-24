@@ -8,6 +8,18 @@ export default function ProductDetail({
   onAdd,
   totalQuantity,
 }) {
+  // Mostrar un mensaje de "Cargando..." si los datos aún no están disponibles
+  if (!selectedProduct || stock === undefined) {
+    return (
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <h2 className={styles.title}>Cargando...</h2>
+        </div>
+      </section>
+    );
+  }
+
+  // Mostrar la información del producto
   return (
     <section className={styles.section}>
       <div className={styles.container}>
