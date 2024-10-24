@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import CounterContainer from "../../common/counter/CounterContainer";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import styles from "./ProductDetail.module.css";
@@ -8,12 +9,44 @@ export default function ProductDetail({
   onAdd,
   totalQuantity,
 }) {
-  // Mostrar un mensaje de "Cargando..." si los datos aún no están disponibles
-  if (!selectedProduct || stock === undefined) {
+  const [loading, setLoading] = useState(true);
+  const loadingMessageRef = useRef(null);
+  const productDescriptionRef = useRef(null);
+
+  useEffect(() => {
+    // Simular un delay con setTimeout
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    // Enfocar el mensaje de "Cargando..." para el lector de pantalla
+    if (loading && loadingMessageRef.current) {
+      loadingMessageRef.current.focus();
+    }
+
+    return () => clearTimeout(timeout);
+  }, [loading, selectedProduct]);
+
+  useEffect(() => {
+    // Cuando los datos del producto están listos y loading es false, enfocar la descripción del producto
+    if (!loading && productDescriptionRef.current) {
+      productDescriptionRef.current.focus();
+    }
+  }, [loading]);
+
+  // Mostrar el loader
+  if (loading || !selectedProduct || stock === undefined) {
     return (
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2 className={styles.title}>Cargando...</h2>
+          <span
+            className={styles.title}
+            tabIndex={-1}
+            ref={loadingMessageRef}
+            aria-live="assertive"
+          >
+            Cargando el producto...
+          </span>
         </div>
       </section>
     );
@@ -29,7 +62,7 @@ export default function ProductDetail({
           <div className={styles.col1}>
             <img
               src={selectedProduct.image}
-              alt={selectedProduct.title}
+              alt=""
               className={styles.productImage}
               width={640}
               height={900}
@@ -37,7 +70,11 @@ export default function ProductDetail({
           </div>
           <div className={styles.col2}>
             <h3 className={styles.productTitle}>{selectedProduct.title}</h3>
-            <p className={styles.productDescription}>
+            <p
+              className={styles.productDescription}
+              tabIndex={-1}
+              ref={productDescriptionRef}
+            >
               {selectedProduct.description}
             </p>
             <p>

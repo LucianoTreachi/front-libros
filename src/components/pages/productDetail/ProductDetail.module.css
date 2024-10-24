@@ -10,6 +10,7 @@
 }
 
 .title {
+  display: block;
   margin-top: 4rem;
   color: var(--black);
   font-size: 3rem;
