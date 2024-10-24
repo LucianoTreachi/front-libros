@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import CounterContainer from "../../common/counter/CounterContainer";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import CounterContainer from "../../common/counter/CounterContainer";
 import styles from "./ProductDetail.module.css";
 
 export default function ProductDetail({
@@ -11,28 +11,20 @@ export default function ProductDetail({
 }) {
   const [loading, setLoading] = useState(true);
   const loadingMessageRef = useRef(null);
-  const productDescriptionRef = useRef(null);
 
   useEffect(() => {
-    // Simular un delay con setTimeout
+    // Simular una demora para que se muestre el loader
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 2000);
 
-    // Enfocar el mensaje de "Cargando..." para el lector de pantalla
+    // Enfocar el mensaje de loader para que el lector de pantalla lo anuncie
     if (loading && loadingMessageRef.current) {
       loadingMessageRef.current.focus();
     }
 
     return () => clearTimeout(timeout);
   }, [loading, selectedProduct]);
-
-  useEffect(() => {
-    // Cuando los datos del producto están listos y loading es false, enfocar la descripción del producto
-    if (!loading && productDescriptionRef.current) {
-      productDescriptionRef.current.focus();
-    }
-  }, [loading]);
 
   // Mostrar el loader
   if (loading || !selectedProduct || stock === undefined) {
@@ -70,11 +62,7 @@ export default function ProductDetail({
           </div>
           <div className={styles.col2}>
             <h3 className={styles.productTitle}>{selectedProduct.title}</h3>
-            <p
-              className={styles.productDescription}
-              tabIndex={-1}
-              ref={productDescriptionRef}
-            >
+            <p className={styles.productDescription}>
               {selectedProduct.description}
             </p>
             <p>
