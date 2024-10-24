@@ -44,6 +44,7 @@ export default function ProductDetail({
               onAdd={onAdd}
               stock={stock}
               totalQuantity={totalQuantity}
+              productTitle={selectedProduct.title}
             />
           </div>
         </div>

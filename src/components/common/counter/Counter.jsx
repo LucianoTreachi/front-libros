@@ -7,6 +7,7 @@ export default function Counter({
   stock,
   onAdd,
   totalQuantity,
+  productTitle,
 }) {
   return (
     <div>
@@ -66,7 +67,7 @@ export default function Counter({
         <button
           className={styles.addToCartButton}
           onClick={() => onAdd(count)}
-          aria-label={`Agregar al carrito: ${count}`}
+          aria-label={`Agregar al carrito el producto ${productTitle}. Cantidad: ${count}.`}
         >
           Agregar al carrito
         </button>

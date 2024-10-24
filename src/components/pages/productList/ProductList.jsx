@@ -21,7 +21,7 @@ export default function ProductList({
         <div className={styles.containerCategorySelect}>
           <select
             id="select"
-            aria-label="Seleccionar categoría"
+            aria-label="Selecciona una categoría"
             value={activeCategory}
             onChange={handleCategoryChange}
             className={styles.selectCategory}
@@ -44,7 +44,7 @@ export default function ProductList({
                 <source media="(max-width: 574px)" srcSet={product.image300} />
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={`${product.title}. Autor ${product.author}.`}
                   width={640}
                   height={900}
                   loading="lazy"

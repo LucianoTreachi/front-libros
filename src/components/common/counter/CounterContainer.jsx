@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Counter from "./Counter";
 
-export default function CounterContainer({ stock, onAdd, totalQuantity }) {
+export default function CounterContainer({
+  stock,
+  onAdd,
+  totalQuantity,
+  productTitle,
+}) {
   // Crear un estado para mostrar el valor inicial del contador
   const [count, setCount] = useState(1);
 
@@ -28,6 +33,7 @@ export default function CounterContainer({ stock, onAdd, totalQuantity }) {
       stock={stock}
       onAdd={onAdd}
       totalQuantity={totalQuantity}
+      productTitle={productTitle}
     />
   );
 }
