@@ -38,14 +38,16 @@
 
 .addedStock,
 .maximumStock {
-  font-size: 1.4rem;
-  color: #008b51;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #15660f;
   margin-bottom: 2rem;
 }
 
 .outOfStock {
-  font-size: 1.4rem;
-  color: #c74306;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #7F2C05;
   margin-bottom: 2rem;
 }
 

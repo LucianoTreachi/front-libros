@@ -122,15 +122,15 @@
 .paypalButton {
   display: inline-block;
   text-align: center;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   border-radius: 1rem;
-  padding: 1.5rem 4rem;
+  padding: 2rem 4rem;
   transition: .3s;
 }
 
 .creditButton {
-  color: var(--white);
+  color: #ffffff;
   background-color: #007acd;
 }
 
