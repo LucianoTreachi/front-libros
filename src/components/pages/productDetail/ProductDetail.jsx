@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../../common/loader/Loader";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import CounterContainer from "../../common/counter/CounterContainer";
 import styles from "./ProductDetail.module.css";
@@ -10,18 +11,12 @@ export default function ProductDetail({
   totalQuantity,
 }) {
   const [loading, setLoading] = useState(true);
-  const loadingMessageRef = useRef(null);
 
   useEffect(() => {
     // Simular una demora para que se muestre el loader
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000);
-
-    // Enfocar el mensaje de loader para que el lector de pantalla lo anuncie
-    if (loading && loadingMessageRef.current) {
-      loadingMessageRef.current.focus();
-    }
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, [loading, selectedProduct]);
@@ -31,14 +26,7 @@ export default function ProductDetail({
     return (
       <section className={styles.section}>
         <div className={styles.container}>
-          <span
-            className={styles.title}
-            tabIndex={-1}
-            ref={loadingMessageRef}
-            aria-live="assertive"
-          >
-            Cargando el producto...
-          </span>
+          <Loader />
         </div>
       </section>
     );
