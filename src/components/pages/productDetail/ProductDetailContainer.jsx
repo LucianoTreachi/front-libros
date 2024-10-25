@@ -9,44 +9,43 @@ import NavigateToTop from "../../../routes/NavigateToTop";
 import SuccessModal from "../../modals/successModal/SuccessModal";
 
 export default function ProductDetailContainer() {
-  // Consumir funciones que vienen del contexto CartContext
+  // Desestructurar funciones del contexto CartContext para gestionar el carrito
   const { addToCart, getQuantityById } = useContext(CartContext);
 
-  // Traer la propiedad id de cada producto mediante useParams
+  // Obtener el ID del producto de los parámetros de la ruta
   const { id } = useParams();
 
-  // En una variable guardar la función getQuantityById y le paso como parámetro el id
+  // Obtener la cantidad total de productos en el carrito utilizando el ID del producto
   const totalQuantity = getQuantityById(id);
 
-  // Crear un estado para los productos seleccionados
+  // Estado para almacenar el producto seleccionado
   const [selectedProduct, setSelectedProduct] = useState([]);
 
-  // Crear un estado para mostrar el modal success
+  // Estado para controlar la visibilidad del modal de éxito
   const [successModal, setSuccessModal] = useState(false);
 
   useEffect(() => {
-    // Traer la colección "products" de Firestore
-    let productsCollection = collection(db, "products");
+    // Referencia a la colección "products" en Firestore
+    const productsCollection = collection(db, "products");
 
-    // Guardar el método doc para obtener un documento específico dentro de la colección "products"
-    let selectedDoc = doc(productsCollection, id);
+    // Referencia al documento específico del producto utilizando su ID
+    const selectedDoc = doc(productsCollection, id);
 
-    // Obtener el documento
+    // Obtener los datos del documento y actualizar el estado del producto seleccionado
     getDoc(selectedDoc).then((response) => {
       setSelectedProduct({ ...response.data(), id: response.id });
     });
   }, [id]);
 
-  // Crear una función para que la ejecute el botón "Agregar al carrito"
+  // Función que se ejecuta al agregar el producto al carrito
   const onAdd = (quantity) => {
-    // ¿Qué hace esta función?
-    // 1. Crea un nuevo objeto que es una copia del objeto productSelected, y agrega una propiedad adicional "quantity" que contiene la cantidad seleccionada en el contador.
-    let productCart = { ...selectedProduct, quantity: quantity };
+    // Crear un objeto que represente el producto con la cantidad seleccionada
+    const productCart = { ...selectedProduct, quantity };
 
-    // 2. Llama a la función addToCart, que es proporcionada por el contexto CartContext, para agregar el producto al carrito.
+    // Llamar a la función addToCart del contexto para agregar el producto al carrito
     addToCart(productCart);
 
-    // 3. Muestra el modal success
+    // Mostrar el modal de éxito al agregar el producto
     setSuccessModal(true);
   };
 
@@ -69,6 +68,7 @@ export default function ProductDetailContainer() {
         onAdd={onAdd}
         totalQuantity={totalQuantity}
       />
+
       {successModal && (
         <SuccessModal
           title="Producto Agregado"
