@@ -57,7 +57,7 @@ export default function ProductDetailContainer() {
         <title>
           {selectedProduct.title
             ? `${selectedProduct.title} - FrontLibros`
-            : "Cargando..."}
+            : "Cargando el producto"}
         </title>
       </Helmet>
 
