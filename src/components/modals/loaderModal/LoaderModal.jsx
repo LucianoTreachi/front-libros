@@ -16,7 +16,7 @@ export default function LoaderModal({ message }) {
               <div className={styles.dot}></div>
               <div className={styles.dot}></div>
             </div>
-            <h2>{message}</h2>
+            <h2 className={styles.message}>{message}</h2>
           </div>
         </div>
       </div>
