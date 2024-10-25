@@ -10,18 +10,20 @@ export default function Error404() {
         <title>Página no encontrada - FrontLibros</title>
       </Helmet>
 
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <GoHomeButton />
-          <h2 className={styles.title}>
-            Error, no hemos podido encontrar la página que buscas
-          </h2>
-          <img
-            src="https://res.cloudinary.com/dwqk2mkgh/image/upload/v1688589199/ecommerce-libros/404_r5byf8.svg"
-            alt="Imagen de error 404"
-          />
-        </div>
-      </section>
+      <main>
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <GoHomeButton />
+            <h1 className={styles.title}>
+              Error, no hemos podido encontrar la página que buscas
+            </h1>
+            <img
+              src="https://res.cloudinary.com/dwqk2mkgh/image/upload/v1688589199/ecommerce-libros/404_r5byf8.svg"
+              alt="Imagen de error 404"
+            />
+          </div>
+        </section>
+      </main>
     </>
   );
 }

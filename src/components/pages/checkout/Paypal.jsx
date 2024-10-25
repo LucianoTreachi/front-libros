@@ -89,83 +89,89 @@ export default function Paypal() {
         <title>Pago con PayPal - FrontLibros</title>
       </Helmet>
 
-      <section className={styles.section}>
-        <NavigateToTop />
-        <div className={styles.container}>
-          <GoBackButton />
-          <h2 className={styles.title}>Pagar con PayPal</h2>
+      <NavigateToTop />
 
-          {cartProducts.length === 0 ? (
-            <p className={styles.message}>
-              No tienes productos agregados. Si lo deseas, puedes volver a la
-              tienda.
-            </p>
-          ) : (
-            <>
-              <h3 className={styles.subtitle}>Completa todos los campos</h3>
+      <main>
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <GoBackButton />
+            <h1 className={styles.title}>Pagar con PayPal</h1>
 
-              <div className={styles.products}>
-                <div className={styles.col1}>
-                  {/* Formulario */}
-                  <form onSubmit={handleSubmit} className={styles.form}>
-                    {/* Campo Correo electrónico */}
-                    <div className={styles.containerInput}>
-                      <label htmlFor="email">Correo electrónico</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        onChange={handleChange}
-                      />
-                    </div>
-                    {/* Botón Pagar */}
-                    <button type="submit" className={styles.payButton}>
-                      Pay<span>Pal</span>
-                    </button>
-                  </form>
-                </div>
-                {/* Detalle de compra */}
-                <div className={styles.col2}>
-                  {cartProducts.map((cartProduct) => {
-                    return (
-                      <div
-                        key={cartProduct.id}
-                        className={styles.containerProduct}
-                      >
-                        <img src={cartProduct.image} alt={cartProduct.title} />
-                        <h3>{cartProduct.title}</h3>
-                        <p>
-                          ${" "}
-                          {(cartProduct.price * cartProduct.quantity).toFixed(
-                            2
-                          )}
-                        </p>
+            {cartProducts.length === 0 ? (
+              <p className={styles.message}>
+                No tienes productos agregados. Si lo deseas, puedes volver a la
+                tienda.
+              </p>
+            ) : (
+              <>
+                <h2 className={styles.subtitle}>Completa todos los campos</h2>
+
+                <div className={styles.products}>
+                  <div className={styles.col1}>
+                    {/* Formulario */}
+                    <form onSubmit={handleSubmit} className={styles.form}>
+                      {/* Campo Correo electrónico */}
+                      <div className={styles.containerInput}>
+                        <label htmlFor="email">Correo electrónico</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          onChange={handleChange}
+                        />
                       </div>
-                    );
-                  })}
-                  <h4 className={styles.totalPrice}>
-                    Precio Total: $ {totalPrice.toFixed(2)}
-                  </h4>
+                      {/* Botón Pagar */}
+                      <button type="submit" className={styles.payButton}>
+                        Pay<span>Pal</span>
+                      </button>
+                    </form>
+                  </div>
+                  {/* Detalle de compra */}
+                  <div className={styles.col2}>
+                    {cartProducts.map((cartProduct) => {
+                      return (
+                        <div
+                          key={cartProduct.id}
+                          className={styles.containerProduct}
+                        >
+                          <img
+                            src={cartProduct.image}
+                            alt={cartProduct.title}
+                          />
+                          <h3>{cartProduct.title}</h3>
+                          <p>
+                            ${" "}
+                            {(cartProduct.price * cartProduct.quantity).toFixed(
+                              2
+                            )}
+                          </p>
+                        </div>
+                      );
+                    })}
+                    <h4 className={styles.totalPrice}>
+                      Precio Total: $ {totalPrice.toFixed(2)}
+                    </h4>
+                  </div>
                 </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
 
-          {/* Si el estado loaderModal es true, mostrar el componente Loader  */}
-          {loaderModal && <LoaderModal message="Procesando el pago" />}
+            {/* Si el estado loaderModal es true, mostrar el componente Loader  */}
+            {loaderModal && <LoaderModal message="Procesando el pago" />}
 
-          {/* Si el estado successModal es true, mostrar el componente successModal  */}
-          {successModal && (
-            <SuccessModal
-              title="Pago realizado correctamente"
-              message="Tu número de seguimiento es:"
-              orderId={orderId}
-              onConfirm={navigateToHome}
-            />
-          )}
-        </div>
-      </section>
+            {/* Si el estado successModal es true, mostrar el componente successModal  */}
+            {successModal && (
+              <SuccessModal
+                title="Pago realizado correctamente"
+                message="Tu número de seguimiento es:"
+                orderId={orderId}
+                onConfirm={navigateToHome}
+              />
+            )}
+          </div>
+        </section>
+      </main>
     </>
   );
 }
