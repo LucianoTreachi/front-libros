@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
@@ -36,13 +37,6 @@ export default function ProductDetailContainer() {
     });
   }, [id]);
 
-  // Metadata title
-  useEffect(() => {
-    if (selectedProduct.title) {
-      document.title = `${selectedProduct.title} - FrontLibros`;
-    }
-  }, [selectedProduct]);
-
   // Crear una función para que la ejecute el botón "Agregar al carrito"
   const onAdd = (quantity) => {
     // ¿Qué hace esta función?
@@ -58,7 +52,17 @@ export default function ProductDetailContainer() {
 
   return (
     <>
+      {/* Metadata title */}
+      <Helmet>
+        <title>
+          {selectedProduct.title
+            ? `${selectedProduct.title} - FrontLibros`
+            : "Cargando..."}
+        </title>
+      </Helmet>
+
       <NavigateToTop />
+
       <ProductDetail
         selectedProduct={selectedProduct}
         stock={selectedProduct.stock}
