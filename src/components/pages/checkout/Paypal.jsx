@@ -1,5 +1,5 @@
 import { CartContext } from "../../../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import {
@@ -16,6 +16,11 @@ import SuccessModal from "../../modals/successModal/SuccessModal";
 import styles from "./Paypal.module.css";
 
 export default function Paypal() {
+  // Metadata title
+  useEffect(() => {
+    document.title = "Pagar con PayPal - FrontLibros";
+  }, []);
+
   // Consumir variables y funciones que vienen del contexto CartContext
   const { cartProducts, getTotalPrice, clearCart } = useContext(CartContext);
 

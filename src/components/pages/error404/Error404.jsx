@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import styles from "./Error404.module.css";
 
 export default function Error404() {
+  // Metadata title
+  useEffect(() => {
+    document.title = "Página no encontrada - FrontLibros";
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>

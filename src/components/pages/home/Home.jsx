@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import ProductListContainer from "../productList/ProductListContainer";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  // Metadata title
+  useEffect(() => {
+    document.title =
+      "FrontLibros - Descubre los Mejores Libros de Desarrollo Frontend";
+  }, []);
+
   return (
     <main>
       <section className={styles.section}>

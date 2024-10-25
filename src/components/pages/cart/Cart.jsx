@@ -4,6 +4,7 @@ import { BsFillTrash3Fill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import NavigateToTop from "../../../routes/NavigateToTop";
 import styles from "./Cart.module.css";
+import { useEffect } from "react";
 
 export default function Cart({
   cartProducts,
@@ -11,6 +12,11 @@ export default function Cart({
   handleDeleteProduct,
   totalPrice,
 }) {
+  // Metadata title
+  useEffect(() => {
+    document.title = "Carrito - FrontLibros";
+  }, []);
+
   return (
     <section className={styles.section}>
       <NavigateToTop />

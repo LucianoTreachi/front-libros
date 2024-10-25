@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import NavigateToTop from "../../../routes/NavigateToTop";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import styles from "./HowToBuy.module.css";
 
 export default function HowToBuy() {
+  // Metadata title
+  useEffect(() => {
+    document.title = "Cómo comprar - FrontLibros";
+  }, []);
+
   return (
     <section className={styles.section}>
       <NavigateToTop />

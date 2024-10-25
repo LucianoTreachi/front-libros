@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import NavigateToTop from "../../../routes/NavigateToTop";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import LoaderModal from "../../modals/loaderModal/LoaderModal";
@@ -11,6 +12,11 @@ export default function Contact({
   successModal,
   navigateToHome,
 }) {
+  // Metadata title
+  useEffect(() => {
+    document.title = "Contacto - FrontLibros";
+  }, []);
+
   return (
     <section className={styles.section}>
       <NavigateToTop />

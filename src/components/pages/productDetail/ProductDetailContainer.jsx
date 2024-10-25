@@ -36,6 +36,13 @@ export default function ProductDetailContainer() {
     });
   }, [id]);
 
+  // Metadata title
+  useEffect(() => {
+    if (selectedProduct.title) {
+      document.title = `${selectedProduct.title} - FrontLibros`;
+    }
+  }, [selectedProduct]);
+
   // Crear una función para que la ejecute el botón "Agregar al carrito"
   const onAdd = (quantity) => {
     // ¿Qué hace esta función?
