@@ -6,8 +6,9 @@
   --dark-grey: #b9b9b9;
   --light-grey: #e6e5e5;
   --hover-light-grey: #d3d0d0;
-
   --background-1: #f4f0eb;
+  --background-button: #146ef5;
+  --color-text: #15660f;
 
   --animation-fade-in: fade-in .4s backwards .2s;
 }

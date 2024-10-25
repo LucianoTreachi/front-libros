@@ -28,7 +28,7 @@
 
 .helpParagraph {
   font-weight: 600;
-  color: #15660f;
+  color: var(--color-text);
 }
 
 @media screen and (max-width: 820px) {

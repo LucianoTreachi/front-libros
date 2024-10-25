@@ -109,7 +109,7 @@
 
 .totalPrice {
   font-size: 2rem;
-  color: #008b51;
+  color: var(--color-text);
 }
 
 .containerPayButtons {
@@ -131,7 +131,7 @@
 
 .creditButton {
   color: #ffffff;
-  background-color: #007acd;
+  background-color: var(--background-button);
 }
 
 .paypalButton {

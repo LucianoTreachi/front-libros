@@ -115,7 +115,7 @@ span {
 .totalPrice {
   margin-top: 4rem;
   font-size: 1.4rem;
-  color: #008b51;
+  color: var(--color-text);
   text-align: right;
 }
 
