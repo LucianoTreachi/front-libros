@@ -94,9 +94,10 @@
 }
 
 .clearCartButton {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #db1436;
+  text-decoration: underline;
   border: 0;
   background-color: transparent;
   cursor: pointer;

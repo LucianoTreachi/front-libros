@@ -93,7 +93,7 @@ export default function Cart({
                     onClick={handleClearCart}
                     className={styles.clearCartButton}
                   >
-                    - Vaciar Carrito -
+                    Vaciar Carrito
                   </button>
                 </div>
                 <div className={styles.containerPayButtons}>
