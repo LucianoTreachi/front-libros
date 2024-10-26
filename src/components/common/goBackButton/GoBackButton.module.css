@@ -1,11 +1,12 @@
 .button {
+  border: none;
+  background: none;
+  padding: 1rem 0;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--black);
   opacity: .75;
   transition: .3s;
-  background-color: transparent;
-  border: 0;
   cursor: pointer;
 }
 

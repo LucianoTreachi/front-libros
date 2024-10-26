@@ -70,14 +70,14 @@
 }
 
 .deleteProductButton {
-  background: transparent;
   border: none;
+  background: none;
   cursor: pointer;
-  width: max-content;
+  padding: 1rem;
 }
 
 .trashIcon {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #db1436;
   transition: .3s;
 }
@@ -94,12 +94,13 @@
 }
 
 .clearCartButton {
+  border: none;
+  background: none;
+  padding: 1rem;
   font-size: 1.8rem;
   font-weight: 500;
   color: #db1436;
   text-decoration: underline;
-  border: 0;
-  background-color: transparent;
   cursor: pointer;
   transition: .3s;
 }
