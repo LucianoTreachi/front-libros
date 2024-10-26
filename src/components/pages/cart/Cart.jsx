@@ -97,7 +97,11 @@ export default function Cart({
                   </button>
                 </div>
                 <div className={styles.containerPayButtons}>
-                  <Link to="/pagar-con-tarjeta" className={styles.creditButton}>
+                  <Link
+                    to="/pagar-con-tarjeta"
+                    id="pay-link"
+                    className={styles.creditButton}
+                  >
                     Pagar con Tarjeta de Crédito o Débito
                   </Link>
                   <Link to="/pagar-con-paypal" className={styles.paypalButton}>

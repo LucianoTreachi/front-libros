@@ -14,19 +14,20 @@ export default function CartContainer() {
   const [confirmationParagraph, setConfirmationParagraph] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // Manejar la acción de vaciar el carrito
-  const handleClearCart = () => {
-    setConfirmationTitle("Vaciar Carrito");
-    setConfirmationParagraph(
-      "¿Quieres eliminar todos tus productos agregados?"
-    );
-    setIsConfirmationModal(true);
+  // Función para enfocar el carrito
+  const focusCartWidget = () => {
+    const cartWidget = document.getElementById("cartWidget");
+    if (cartWidget) {
+      cartWidget.focus();
+    }
   };
 
-  // Confirmar vaciar el carrito
-  const confirmClearCart = () => {
-    clearCart();
-    setIsConfirmationModal(false);
+  // Función para enfocar el link de pago con tarjeta de crédito o débito
+  const focusPayLink = () => {
+    const payLink = document.getElementById("pay-link");
+    if (payLink) {
+      payLink.focus();
+    }
   };
 
   // Manejar la acción de borrar un producto
@@ -43,6 +44,29 @@ export default function CartContainer() {
       deleteProduct(selectedProduct);
       setIsConfirmationModal(false);
     }
+    focusCartWidget();
+  };
+
+  // Manejar la acción de vaciar el carrito
+  const handleClearCart = () => {
+    setConfirmationTitle("Vaciar Carrito");
+    setConfirmationParagraph(
+      "¿Quieres eliminar todos tus productos agregados?"
+    );
+    setIsConfirmationModal(true);
+  };
+
+  // Confirmar vaciar el carrito
+  const confirmClearCart = () => {
+    clearCart();
+    setIsConfirmationModal(false);
+    focusCartWidget();
+  };
+
+  // Cancelar la acción de eliminar producto o vaciar carrito
+  const handleCancelAction = () => {
+    setIsConfirmationModal(false);
+    focusPayLink();
   };
 
   useEffect(() => {
@@ -67,7 +91,7 @@ export default function CartContainer() {
       {/* Si el estado isConfirmationModal es true, mostrar el componente ConfirmationModal */}
       {isConfirmationModal && (
         <ConfirmationModal
-          onCancel={() => setIsConfirmationModal(false)}
+          onCancel={handleCancelAction}
           onConfirm={
             confirmationTitle === "Vaciar Carrito"
               ? confirmClearCart
