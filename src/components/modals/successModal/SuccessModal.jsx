@@ -1,17 +1,11 @@
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import styles from "./SuccessModal.module.css";
 
-export default function SuccessModal({
-  title,
-  message,
-  orderId,
-  onConfirm,
-  focusRef,
-}) {
+export default function SuccessModal({ title, message, orderId, onConfirm }) {
   return (
     <>
       <div className={styles.modalBackdrop}>
-        <div className={styles.modalContent} tabIndex={-1} ref={focusRef}>
+        <div id="success-modal" className={styles.modalContent} tabIndex={-1}>
           <div className={styles.containerIcon}>
             <AiOutlineCheckCircle className={styles.icon} aria-hidden="true" />
           </div>

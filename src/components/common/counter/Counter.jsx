@@ -9,15 +9,13 @@ export default function Counter({
   onAdd,
   totalQuantity,
   productTitle,
-  goToCartRef,
 }) {
   const navigate = useNavigate();
 
-  // Función para navegar hacia la página /carrito
+  // Función para navegar hacia la página /carrito y seleccionar el cart widget
   function handleGoToCart() {
     navigate("/carrito");
 
-    // Seleccionar el elemento con id "cartWidget" y enfocarlo si existe
     const cartWidget = document.getElementById("cartWidget");
     if (cartWidget) {
       cartWidget.focus();
@@ -88,9 +86,9 @@ export default function Counter({
             Agregar al carrito
           </button>
           <button
+            id="goToCartButton"
             className={`${styles.button} ${styles.goToCartButton}`}
             aria-label={"Revisar el carrito."}
-            ref={goToCartRef}
             onClick={handleGoToCart}
           >
             Revisar el carrito

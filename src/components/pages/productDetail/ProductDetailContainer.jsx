@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
@@ -22,13 +22,7 @@ export default function ProductDetailContainer() {
   const [selectedProduct, setSelectedProduct] = useState([]);
 
   // Estado para controlar la visibilidad del modal de éxito
-  const [successModal, setSuccessModal] = useState(false);
-
-  // Referencia al modal para permitir el enfoque programático
-  const successModalRef = useRef(null);
-
-  // Referencia al botón 'Revisar el carrito'
-  const goToCartButtonRef = useRef(null);
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
 
   useEffect(() => {
     // Referencia a la colección "products" en Firestore
@@ -45,16 +39,19 @@ export default function ProductDetailContainer() {
 
   useEffect(() => {
     // Enfocar el modal de éxito cuando esté visible
-    if (successModal && successModalRef.current) {
-      successModalRef.current.focus();
+    const successModalID = document.getElementById("success-modal");
+    if (isSuccessModal && successModalID) {
+      successModalID.focus();
     }
-  }, [successModal]);
+  }, [isSuccessModal]);
 
   // Cerrar el modal y enfocar el botón "Revisar el carrito"
   const handleCloseModal = () => {
-    setSuccessModal(false);
-    if (goToCartButtonRef.current) {
-      goToCartButtonRef.current.focus();
+    setIsSuccessModal(false);
+
+    const goToCartButton = document.getElementById("goToCartButton");
+    if (goToCartButton) {
+      goToCartButton.focus();
     }
   };
 
@@ -67,7 +64,7 @@ export default function ProductDetailContainer() {
     addToCart(productCart);
 
     // Mostrar el modal de éxito al agregar el producto
-    setSuccessModal(true);
+    setIsSuccessModal(true);
   };
 
   return (
@@ -88,12 +85,10 @@ export default function ProductDetailContainer() {
         stock={selectedProduct.stock}
         onAdd={onAdd}
         totalQuantity={totalQuantity}
-        goToCartRef={goToCartButtonRef}
       />
 
-      {successModal && (
+      {isSuccessModal && (
         <SuccessModal
-          focusRef={successModalRef}
           title="Producto Agregado"
           message="Revisa el carrito"
           onConfirm={handleCloseModal}
