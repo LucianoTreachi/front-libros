@@ -16,6 +16,7 @@
   right: 0;
   font-size: 1.6rem;
   font-weight: 600;
+  opacity: 0.80;
   color: var(--black);
 }
 
