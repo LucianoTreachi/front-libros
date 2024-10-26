@@ -13,6 +13,17 @@ export default function Counter({
 }) {
   const navigate = useNavigate();
 
+  // Función para navegar hacia la página /carrito
+  function handleGoToCart() {
+    navigate("/carrito");
+
+    // Seleccionar el elemento con id "cartWidget" y enfocarlo si existe
+    const cartWidget = document.getElementById("cartWidget");
+    if (cartWidget) {
+      cartWidget.focus();
+    }
+  }
+
   return (
     <div>
       <div className={styles.containerButtons}>
@@ -78,9 +89,9 @@ export default function Counter({
           </button>
           <button
             className={`${styles.button} ${styles.goToCartButton}`}
-            onClick={() => navigate("/carrito")}
             aria-label={"Revisar el carrito."}
             ref={goToCartRef}
+            onClick={handleGoToCart}
           >
             Revisar el carrito
           </button>
