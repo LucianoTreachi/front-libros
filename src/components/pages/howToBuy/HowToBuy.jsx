@@ -50,7 +50,7 @@ export default function HowToBuy() {
                 <br />
                 <br />
                 <p>
-                  <b>5.</b> Si deseas agregar más de 1 libro, incrementa la
+                  <b>5.</b> Si deseas agregar más de un libro, incrementa la
                   cantidad.
                 </p>
                 <br />
