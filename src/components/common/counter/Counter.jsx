@@ -15,7 +15,7 @@ export default function Counter({
         <button
           className={styles.counterButton}
           onClick={decrement}
-          aria-label={`Disminuir la cantidad del producto. Tienes ${count}. Las unidades disponibles de este producto son: ${stock}.`}
+          aria-label={`Disminuir la cantidad. Tienes ${count}. Unidades disponibles: ${stock}.`}
         >
           -
         </button>
@@ -23,7 +23,7 @@ export default function Counter({
         <button
           className={styles.counterButton}
           onClick={increment}
-          aria-label={`Aumentar la cantidad del producto. Tienes ${count}. Las unidades disponibles de este producto son: ${stock}.`}
+          aria-label={`Aumentar la cantidad. Tienes ${count}. Unidades disponibles: ${stock}.`}
         >
           +
         </button>
@@ -67,7 +67,7 @@ export default function Counter({
         <button
           className={styles.addToCartButton}
           onClick={() => onAdd(count)}
-          aria-label={`Agregar al carrito el producto ${productTitle}. Cantidad: ${count}.`}
+          aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
         >
           Agregar al carrito
         </button>

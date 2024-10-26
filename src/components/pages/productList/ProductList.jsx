@@ -21,7 +21,7 @@ export default function ProductList({
         <div className={styles.containerCategorySelect}>
           <select
             id="select"
-            aria-label="Selecciona una categoría"
+            aria-label="Estás en la tienda de libros. Selecciona una categoría."
             value={activeCategory}
             onChange={handleCategoryChange}
             className={styles.selectCategory}
