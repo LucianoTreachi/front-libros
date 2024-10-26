@@ -1,11 +1,8 @@
 .container {
   position: relative;
   padding-right: 2rem;
-  margin-left: 1rem;
-}
-
-.cartLink {
-  margin-left: 2rem;
+  margin-left: 3rem;
+  padding: 1rem;
 }
 
 .cartIcon {
@@ -16,7 +13,13 @@
 .cartNumber {
   position: absolute;
   top: -5px;
-  right: 2px;
+  right: 0;
   font-size: 1.6rem;
   color: var(--black);
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    margin-left: initial;
+  }
 }
