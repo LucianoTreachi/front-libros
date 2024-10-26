@@ -11,6 +11,7 @@
   justify-content: center;
   z-index: 5;
   animation: var(--animation-fade-in);
+  touch-action: none;
 }
 
 .modalContent {
@@ -73,12 +74,6 @@
 }
 
 @media screen and (max-width: 574px) {
-  button {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 320px) {
   .containerButtons {
     flex-direction: column-reverse;
   }
