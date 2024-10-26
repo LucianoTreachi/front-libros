@@ -27,7 +27,7 @@ export default function Credit() {
   const [orderId, setOrderId] = useState("");
 
   // Crear un estado para mostrar el modal loader
-  const [loaderModal, setLoaderModal] = useState(false);
+  const [isLoaderModal, setIsLoaderModal] = useState(false);
 
   // Crear un estado para mostrar el modal success
   const [isSuccessModal, setIsSuccessModal] = useState(false);
@@ -79,10 +79,12 @@ export default function Credit() {
       });
     });
 
-    setLoaderModal(true);
+    // Mostrar el modal de carga
+    setIsLoaderModal(true);
 
+    // Luego de 4 segundos, cerrar el modal de carga y mostrar el modal de éxito
     setTimeout(() => {
-      setLoaderModal(false);
+      setIsLoaderModal(false);
       setIsSuccessModal(true);
     }, 4000);
   };
@@ -245,8 +247,8 @@ export default function Credit() {
               </>
             )}
 
-            {/* Si el estado loaderModal es true, mostrar el componente Loader  */}
-            {loaderModal && <LoaderModal message="Procesando el pago" />}
+            {/* Si el estado isLoaderModal es true, mostrar el componente LoaderModal  */}
+            {isLoaderModal && <LoaderModal message="Procesando el pago" />}
 
             {/* Si el estado isSuccessModal es true, mostrar el componente successModal  */}
             {isSuccessModal && (
