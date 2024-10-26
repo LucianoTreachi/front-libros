@@ -30,7 +30,7 @@ export default function Paypal() {
   const [loaderModal, setLoaderModal] = useState(false);
 
   // Crear un estado para mostrar el modal success
-  const [successModal, setSuccessModal] = useState(false);
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
 
   // Crear un estado para rellenar los inputs
   const [data, setData] = useState({
@@ -77,7 +77,7 @@ export default function Paypal() {
 
     setTimeout(() => {
       setLoaderModal(false);
-      setSuccessModal(true);
+      setIsSuccessModal(true);
     }, 4000);
   };
 
@@ -168,8 +168,8 @@ export default function Paypal() {
             {/* Si el estado loaderModal es true, mostrar el componente Loader  */}
             {loaderModal && <LoaderModal message="Procesando el pago" />}
 
-            {/* Si el estado successModal es true, mostrar el componente successModal  */}
-            {successModal && (
+            {/* Si el estado isSuccessModal es true, mostrar el componente successModal  */}
+            {isSuccessModal && (
               <SuccessModal
                 title="Pago realizado correctamente"
                 message="Tu número de seguimiento es:"
