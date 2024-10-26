@@ -13,7 +13,7 @@ export default function SuccessModal({
       <div className={styles.modalBackdrop}>
         <div className={styles.modalContent} tabIndex={-1} ref={focusRef}>
           <div className={styles.containerIcon}>
-            <AiOutlineCheckCircle className={styles.icon} />
+            <AiOutlineCheckCircle className={styles.icon} aria-hidden="true" />
           </div>
           <p className={styles.title}>{title}</p>
           <p className={styles.paragraph}>
