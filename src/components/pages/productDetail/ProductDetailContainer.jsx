@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
@@ -24,6 +24,9 @@ export default function ProductDetailContainer() {
   // Estado para controlar la visibilidad del modal de éxito
   const [successModal, setSuccessModal] = useState(false);
 
+  // Referencia al modal para permitir el enfoque programático
+  const successModalRef = useRef(null);
+
   useEffect(() => {
     // Referencia a la colección "products" en Firestore
     const productsCollection = collection(db, "products");
@@ -36,6 +39,13 @@ export default function ProductDetailContainer() {
       setSelectedProduct({ ...response.data(), id: response.id });
     });
   }, [id]);
+
+  useEffect(() => {
+    // Enfocar el modal de éxito cuando esté visible
+    if (successModal && successModalRef.current) {
+      successModalRef.current.focus();
+    }
+  }, [successModal]);
 
   // Función que se ejecuta al agregar el producto al carrito
   const onAdd = (quantity) => {
@@ -74,6 +84,7 @@ export default function ProductDetailContainer() {
           title="Producto Agregado"
           message="Revisa el carrito"
           onConfirm={() => setSuccessModal(false)}
+          focusRef={successModalRef}
         />
       )}
     </>
