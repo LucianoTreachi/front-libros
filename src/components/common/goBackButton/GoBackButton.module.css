@@ -7,7 +7,6 @@
   color: var(--black);
   opacity: .75;
   transition: .3s;
-  cursor: pointer;
 }
 
 .button:hover {

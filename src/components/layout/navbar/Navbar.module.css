@@ -42,12 +42,10 @@
 }
 
 @media screen and (max-width: 850px) {
-
   .openMenuButton {
     border: none;
     background: none;
     margin-left: 1rem;
-    cursor: pointer;
     display: block;
   }
 
@@ -101,7 +99,6 @@
     position: absolute;
     top: 2rem;
     left: 2rem;
-    cursor: pointer;
     z-index: 4;
   }
 

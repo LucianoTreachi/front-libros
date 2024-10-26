@@ -73,7 +73,6 @@
   border: none;
   background: none;
   width: max-content;
-  cursor: pointer;
   padding: 1rem;
 }
 
@@ -102,7 +101,6 @@
   font-weight: 500;
   color: #db1436;
   text-decoration: underline;
-  cursor: pointer;
   transition: .3s;
 }
 
