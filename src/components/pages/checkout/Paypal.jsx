@@ -45,6 +45,22 @@ export default function Paypal() {
     }
   }, []);
 
+  // Enfocar el modal de carga cuando esté visible
+  useEffect(() => {
+    const loaderModalID = document.getElementById("loader-modal");
+    if (isLoaderModal && loaderModalID) {
+      loaderModalID.focus();
+    }
+  }, [isLoaderModal]);
+
+  // Enfocar el modal de éxito cuando esté visible
+  useEffect(() => {
+    const successModalID = document.getElementById("success-modal");
+    if (isSuccessModal && successModalID) {
+      successModalID.focus();
+    }
+  }, [isSuccessModal]);
+
   // Crear una función  para rellenar los inputs
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
