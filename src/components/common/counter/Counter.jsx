@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./Counter.module.css";
 
 export default function Counter({
@@ -9,6 +10,8 @@ export default function Counter({
   totalQuantity,
   productTitle,
 }) {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className={styles.containerButtons}>
@@ -64,13 +67,22 @@ export default function Counter({
 
       {/* Si el stock es mayor 0, mostrar el botón de "Agregar al carrito". De lo contrario mostrar un mensaje. */}
       {stock > 0 ? (
-        <button
-          className={styles.addToCartButton}
-          onClick={() => onAdd(count)}
-          aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
-        >
-          Agregar al carrito
-        </button>
+        <div className={styles.containerButtons2}>
+          <button
+            className={`${styles.button} ${styles.addToCartButton}`}
+            onClick={() => onAdd(count)}
+            aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
+          >
+            Agregar al carrito
+          </button>
+          <button
+            className={`${styles.button} ${styles.goToCartButton}`}
+            onClick={() => navigate("/carrito")}
+            aria-label={"Revisar el carrito."}
+          >
+            Revisar el carrito
+          </button>
+        </div>
       ) : (
         <p className={styles.outOfStock}>
           Lo sentimos, por el momento no tenemos stock de este producto. Pronto

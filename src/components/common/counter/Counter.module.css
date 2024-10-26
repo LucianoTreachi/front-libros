@@ -4,7 +4,7 @@
   justify-content: space-between;
   border-radius: 1rem;
   border: 1px solid var(--black);
-  width: 250px;
+  width: 160px;
   margin-bottom: 2rem;
 }
 
@@ -51,22 +51,36 @@
   margin-bottom: 2rem;
 }
 
-.addToCartButton {
+.containerButtons2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ffffff;
   padding: 2rem;
-  border: none;
   border-radius: 1rem;
-  background-color: var(--background-button);
-  cursor: pointer;
   width: 250px;
-  white-space: nowrap;
   transition: .3s;
 }
 
-.addToCartButton:hover {
+.button:hover {
   opacity: .9;
+}
+
+.addToCartButton {
+  color: #ffffff;
+  background-color: var(--background-button);
+}
+
+.goToCartButton {
+  color: var(--background-button);
+  background-color: transparent;
+  border: 2px solid var(--background-button);
 }
 
 @media screen and (max-width: 574px) {
@@ -74,7 +88,7 @@
     width: 100%;
   }
 
-  .addToCartButton {
+  .button {
     width: 100%;
   }
 }
