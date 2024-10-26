@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { CartContext } from "../../../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import {
@@ -36,6 +36,14 @@ export default function Paypal() {
   const [data, setData] = useState({
     email: "",
   });
+
+  // Enfocar el campo de email al cargar el componente
+  useEffect(() => {
+    const inputEmail = document.getElementById("email");
+    if (inputEmail) {
+      inputEmail.focus();
+    }
+  }, []);
 
   // Crear una función  para rellenar los inputs
   const handleChange = (e) => {

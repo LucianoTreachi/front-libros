@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { CartContext } from "../../../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import {
@@ -42,6 +42,14 @@ export default function Credit() {
     cvc: "",
     adress: "",
   });
+
+  // Enfocar el campo de nombre al cargar el componente
+  useEffect(() => {
+    const inputName = document.getElementById("nombre");
+    if (inputName) {
+      inputName.focus();
+    }
+  }, []);
 
   // Crear una función para rellenar los inputs
   const handleChange = (e) => {
