@@ -9,6 +9,7 @@ export default function Counter({
   onAdd,
   totalQuantity,
   productTitle,
+  goToCartRef,
 }) {
   const navigate = useNavigate();
 
@@ -79,6 +80,7 @@ export default function Counter({
             className={`${styles.button} ${styles.goToCartButton}`}
             onClick={() => navigate("/carrito")}
             aria-label={"Revisar el carrito."}
+            ref={goToCartRef}
           >
             Revisar el carrito
           </button>

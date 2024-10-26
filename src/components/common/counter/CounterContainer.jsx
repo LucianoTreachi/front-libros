@@ -6,6 +6,7 @@ export default function CounterContainer({
   onAdd,
   totalQuantity,
   productTitle,
+  goToCartRef,
 }) {
   // Crear un estado para mostrar el valor inicial del contador
   const [count, setCount] = useState(1);
@@ -34,6 +35,7 @@ export default function CounterContainer({
       onAdd={onAdd}
       totalQuantity={totalQuantity}
       productTitle={productTitle}
+      goToCartRef={goToCartRef}
     />
   );
 }

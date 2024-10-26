@@ -27,6 +27,9 @@ export default function ProductDetailContainer() {
   // Referencia al modal para permitir el enfoque programático
   const successModalRef = useRef(null);
 
+  // Referencia al botón 'Revisar el carrito'
+  const goToCartButtonRef = useRef(null);
+
   useEffect(() => {
     // Referencia a la colección "products" en Firestore
     const productsCollection = collection(db, "products");
@@ -46,6 +49,14 @@ export default function ProductDetailContainer() {
       successModalRef.current.focus();
     }
   }, [successModal]);
+
+  // Cerrar el modal y enfocar el botón "Revisar el carrito"
+  const handleCloseModal = () => {
+    setSuccessModal(false);
+    if (goToCartButtonRef.current) {
+      goToCartButtonRef.current.focus();
+    }
+  };
 
   // Función que se ejecuta al agregar el producto al carrito
   const onAdd = (quantity) => {
@@ -77,14 +88,15 @@ export default function ProductDetailContainer() {
         stock={selectedProduct.stock}
         onAdd={onAdd}
         totalQuantity={totalQuantity}
+        goToCartRef={goToCartButtonRef}
       />
 
       {successModal && (
         <SuccessModal
+          focusRef={successModalRef}
           title="Producto Agregado"
           message="Revisa el carrito"
-          onConfirm={() => setSuccessModal(false)}
-          focusRef={successModalRef}
+          onConfirm={handleCloseModal}
         />
       )}
     </>

@@ -5,6 +5,7 @@ import CounterContainer from "../../common/counter/CounterContainer";
 import styles from "./ProductDetail.module.css";
 
 export default function ProductDetail({
+  goToCartRef,
   selectedProduct,
   stock,
   onAdd,
@@ -71,6 +72,7 @@ export default function ProductDetail({
                 stock={stock}
                 totalQuantity={totalQuantity}
                 productTitle={selectedProduct.title}
+                goToCartRef={goToCartRef}
               />
             </div>
           </div>
