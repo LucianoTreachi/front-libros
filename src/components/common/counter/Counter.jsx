@@ -39,7 +39,7 @@ export default function Counter({
         <>
           <p className={styles.availableStock}>Unidades Disponibles: {stock}</p>
           <p className={styles.addedStock}>
-            Agregaste 1 unidad. Revisa el carrito.
+            Agregaste una unidad. Revisa el carrito.
           </p>
         </>
       )}
