@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import Cart from "./Cart";
 import ConfirmationModal from "../../modals/confirmationModal/ConfirmationModal";
@@ -9,7 +9,7 @@ export default function CartContainer() {
     useContext(CartContext);
 
   // Estados
-  const [confirmationModal, setConfirmationModal] = useState(false);
+  const [isConfirmationModal, setIsConfirmationModal] = useState(false);
   const [confirmationTitle, setConfirmationTitle] = useState("");
   const [confirmationParagraph, setConfirmationParagraph] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -20,13 +20,13 @@ export default function CartContainer() {
     setConfirmationParagraph(
       "¿Quieres eliminar todos tus productos agregados?"
     );
-    setConfirmationModal(true);
+    setIsConfirmationModal(true);
   };
 
   // Confirmar vaciar el carrito
   const confirmClearCart = () => {
     clearCart();
-    setConfirmationModal(false);
+    setIsConfirmationModal(false);
   };
 
   // Manejar la acción de borrar un producto
@@ -34,16 +34,24 @@ export default function CartContainer() {
     setConfirmationTitle("Eliminar Producto");
     setConfirmationParagraph("¿Quieres eliminar este producto?");
     setSelectedProduct(productId);
-    setConfirmationModal(true);
+    setIsConfirmationModal(true);
   };
 
   // Confirmar eliminar un producto
   const confirmDeleteProduct = () => {
     if (selectedProduct) {
       deleteProduct(selectedProduct);
-      setConfirmationModal(false);
+      setIsConfirmationModal(false);
     }
   };
+
+  useEffect(() => {
+    // Enfocar el modal de confirmación cuando esté visible
+    const confirmationModalID = document.getElementById("confirmation-modal");
+    if (isConfirmationModal && confirmationModalID) {
+      confirmationModalID.focus();
+    }
+  }, [isConfirmationModal]);
 
   // Guardar en una variable la función getTotalPrice que viene de cartContext
   let totalPrice = getTotalPrice();
@@ -56,10 +64,10 @@ export default function CartContainer() {
         handleDeleteProduct={handleDeleteProduct}
         totalPrice={totalPrice}
       />
-      {/* Si el estado confirmationModal es true, mostrar el componente ConfirmationModal */}
-      {confirmationModal && (
+      {/* Si el estado isConfirmationModal es true, mostrar el componente ConfirmationModal */}
+      {isConfirmationModal && (
         <ConfirmationModal
-          onCancel={() => setConfirmationModal(false)}
+          onCancel={() => setIsConfirmationModal(false)}
           onConfirm={
             confirmationTitle === "Vaciar Carrito"
               ? confirmClearCart
