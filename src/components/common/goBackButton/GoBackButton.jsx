@@ -7,7 +7,7 @@ export default function GoBackButton() {
 
   return (
     <button onClick={() => navigate(-1)} className={styles.button}>
-      <BsArrowLeft className={styles.icon} /> Volver atrás
+      <BsArrowLeft className={styles.icon} aria-hidden="true" /> Volver atrás
     </button>
   );
 }

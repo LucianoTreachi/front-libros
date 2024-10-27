@@ -23,7 +23,7 @@ export default function CartWidget() {
             : `Cantidad de productos agregados: ${totalCartWidgetNumber}.`
         }`}
       >
-        <BsCart className={styles.cartIcon} />
+        <BsCart className={styles.cartIcon} aria-hidden="true" />
       </Link>
       <span className={styles.cartNumber}>{totalCartWidgetNumber}</span>
     </div>

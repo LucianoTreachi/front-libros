@@ -34,7 +34,10 @@ export default function Cart({
                     la tienda.
                   </p>
                   <div className={styles.containerCartIcon}>
-                    <BsFillCartFill className={styles.cartIcon} />
+                    <BsFillCartFill
+                      className={styles.cartIcon}
+                      aria-hidden="true"
+                    />
                     <span className={styles.numberCartIcon}>0</span>
                   </div>
                 </div>
@@ -81,7 +84,10 @@ export default function Cart({
                         onClick={() => handleDeleteProduct(cartProduct.id)}
                         aria-label={`Eliminar producto: ${cartProduct.title}`}
                       >
-                        <BsFillTrash3Fill className={styles.trashIcon} />
+                        <BsFillTrash3Fill
+                          className={styles.trashIcon}
+                          aria-hidden="true"
+                        />
                       </button>
                     </div>
                   );

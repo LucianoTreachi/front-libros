@@ -7,7 +7,7 @@ export default function GoHomeButton() {
 
   return (
     <button onClick={() => navigate("/")} className={styles.button}>
-      <BsArrowLeft className={styles.icon} /> Volver a inicio
+      <BsArrowLeft className={styles.icon} aria-hidden="true" /> Volver a inicio
     </button>
   );
 }
