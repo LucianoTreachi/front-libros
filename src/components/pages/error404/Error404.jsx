@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import styles from "./Error404.module.css";
 
 export default function Error404() {
@@ -13,7 +13,7 @@ export default function Error404() {
       <main>
         <section className={styles.section}>
           <div className={styles.container}>
-            <GoHomeButton />
+            <GoHomeLink />
             <h1 className={styles.title}>
               Error, no hemos podido encontrar la página que buscas
             </h1>

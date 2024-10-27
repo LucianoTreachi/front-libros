@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import LoaderModal from "../../modals/loaderModal/LoaderModal";
 import SuccessModal from "../../modals/successModal/SuccessModal";
 import styles from "./Contact.module.css";
@@ -24,7 +24,7 @@ export default function Contact({
       <main>
         <section className={styles.section}>
           <div className={styles.container}>
-            <GoHomeButton />
+            <GoHomeLink />
             <h1 className={styles.title}>Contacto</h1>
             <div className={styles.row}>
               <div className={styles.col1}>

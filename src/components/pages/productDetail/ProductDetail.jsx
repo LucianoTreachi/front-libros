@@ -1,5 +1,5 @@
 import Loader from "../../common/loader/Loader";
-import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import CounterContainer from "../../common/counter/CounterContainer";
 import styles from "./ProductDetail.module.css";
 
@@ -25,7 +25,7 @@ export default function ProductDetail({
     <main>
       <section className={styles.section}>
         <div className={styles.container}>
-          <GoHomeButton />
+          <GoHomeLink />
           <h1 className={styles.title}>Detalle del Producto</h1>
           <div className={styles.row}>
             <div className={styles.col1}>

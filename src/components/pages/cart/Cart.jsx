@@ -3,7 +3,7 @@ import { BsFillCartFill } from "react-icons/bs";
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import styles from "./Cart.module.css";
 
 export default function Cart({
@@ -24,7 +24,7 @@ export default function Cart({
       <main>
         <section className={styles.section}>
           <div className={styles.container}>
-            <GoHomeButton />
+            <GoHomeLink />
             <h1 className={styles.title}>Carrito</h1>
             {cartProducts.length === 0 ? (
               <div className={styles.row}>

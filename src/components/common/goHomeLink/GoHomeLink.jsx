@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
-import styles from "./GoHomeButton.module.css";
+import styles from "./GoHomeLink.module.css";
 
-export default function GoHomeButton() {
+export default function GoHomeLink() {
   return (
     <Link
       to="/"

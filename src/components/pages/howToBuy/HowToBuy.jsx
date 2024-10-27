@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
+import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import styles from "./HowToBuy.module.css";
 
 export default function HowToBuy() {
@@ -16,7 +16,7 @@ export default function HowToBuy() {
       <main>
         <section className={styles.section}>
           <div className={styles.container}>
-            <GoHomeButton />
+            <GoHomeLink />
             <h1 className={styles.title}>Cómo Comprar</h1>
             <div className={styles.row}>
               <div className={styles.col1}>
