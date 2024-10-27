@@ -13,7 +13,6 @@ export default function ProductListContainer() {
   // Estado para la categoría activa
   const [activeCategory, setActiveCategory] = useState("Todos");
 
-  // Realizar la consulta a Firestore
   useEffect(() => {
     // Traer la colección "products" de Firestore
     const productsCollection = collection(db, "products");
@@ -27,6 +26,7 @@ export default function ProductListContainer() {
     // Activar loading antes de la consulta
     setIsLoading(true);
 
+    // Realizar la consulta a Firestore
     getDocs(consultation)
       .then((response) => {
         const documents = response.docs.map((doc) => {
