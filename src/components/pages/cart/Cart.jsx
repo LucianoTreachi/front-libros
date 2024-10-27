@@ -59,7 +59,7 @@ export default function Cart({
                       <div className={styles.containerImage}>
                         <Link
                           to={`/producto/${cartProduct.id}`}
-                          aria-label={`Ver producto: ${cartProduct.title}`}
+                          aria-label={`Ver producto: ${cartProduct.title}. Unidades agregadas: ${cartProduct.quantity}.`}
                         >
                           <img
                             src={cartProduct.image}
@@ -86,9 +86,9 @@ export default function Cart({
                   );
                 })}
                 <div className={styles.priceContainer}>
-                  <h2 className={styles.totalPrice}>
-                    Precio Total: $ {totalPrice.toFixed(2)}
-                  </h2>
+                  <span className={styles.totalPrice} tabIndex={0}>
+                    Precio Total: {totalPrice.toFixed(2)} USD
+                  </span>
                   <button
                     onClick={handleClearCart}
                     className={styles.clearCartButton}
