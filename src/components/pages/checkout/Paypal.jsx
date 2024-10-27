@@ -148,7 +148,11 @@ export default function Paypal() {
                         />
                       </div>
                       {/* Botón Pagar */}
-                      <button type="submit" className={styles.payButton}>
+                      <button
+                        type="submit"
+                        className={styles.payButton}
+                        aria-label="Realizar el pago con PayPal."
+                      >
                         Pay<span>Pal</span>
                       </button>
                     </form>

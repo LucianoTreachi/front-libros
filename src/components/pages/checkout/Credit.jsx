@@ -228,7 +228,11 @@ export default function Credit() {
                         />
                       </div>
                       {/* Botón Pagar */}
-                      <button type="submit" className={styles.payButton}>
+                      <button
+                        type="submit"
+                        className={styles.payButton}
+                        aria-label="Realizar el pago con tarjeta."
+                      >
                         Pagar
                       </button>
                     </form>
