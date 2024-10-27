@@ -1,8 +1,13 @@
 .container {
   position: relative;
-  padding-right: 2rem;
   margin-left: 3rem;
+}
+
+.cartLink {
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartIcon {
