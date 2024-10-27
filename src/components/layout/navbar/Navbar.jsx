@@ -40,6 +40,7 @@ export default function Navbar({ isOpen, toggleMenu }) {
           className={styles.openMenuButton}
           onClick={toggleMenu}
           aria-label="Menú de navegación"
+          aria-expanded={isOpen}
         >
           <AiOutlineMenu />
         </button>
