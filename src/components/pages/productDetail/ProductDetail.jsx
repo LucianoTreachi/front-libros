@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Loader from "../../common/loader/Loader";
 import GoHomeButton from "../../common/goHomeButton/GoHomeButton";
 import CounterContainer from "../../common/counter/CounterContainer";
@@ -10,19 +9,8 @@ export default function ProductDetail({
   onAdd,
   totalQuantity,
 }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simular una demora para que se muestre el loader
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, [loading, selectedProduct]);
-
-  // Mostrar el loader
-  if (loading || !selectedProduct || stock === undefined) {
+  // Mostrar un loader si el producto aún no está disponible
+  if (!selectedProduct || stock === undefined) {
     return (
       <section className={styles.section}>
         <div className={styles.container}>
@@ -32,7 +20,7 @@ export default function ProductDetail({
     );
   }
 
-  // Mostrar la información del producto
+  // Mostrar la información del producto cuando esté disponible
   return (
     <main>
       <section className={styles.section}>
