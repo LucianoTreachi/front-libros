@@ -69,7 +69,7 @@ export default function ProductDetailContainer() {
 
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>
           {selectedProduct.title

@@ -110,7 +110,7 @@ export default function Paypal() {
 
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Pago con PayPal - FrontLibros</title>
       </Helmet>

@@ -5,7 +5,7 @@ import ProductListContainer from "../../common/productList/ProductListContainer"
 export default function Home() {
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>
           FrontLibros - Descubre los Mejores Libros de Desarrollo Frontend

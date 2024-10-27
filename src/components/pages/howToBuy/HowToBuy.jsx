@@ -6,7 +6,7 @@ import styles from "./HowToBuy.module.css";
 export default function HowToBuy() {
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Cómo comprar - FrontLibros</title>
       </Helmet>

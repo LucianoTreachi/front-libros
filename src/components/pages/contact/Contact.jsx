@@ -14,7 +14,7 @@ export default function Contact({
 }) {
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Contacto - FrontLibros</title>
       </Helmet>

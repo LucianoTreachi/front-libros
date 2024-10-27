@@ -5,7 +5,7 @@ import styles from "./Error404.module.css";
 export default function Error404() {
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Página no encontrada - FrontLibros</title>
       </Helmet>

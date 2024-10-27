@@ -116,7 +116,7 @@ export default function Credit() {
 
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Pago con tarjeta de crédito - FrontLibros</title>
       </Helmet>

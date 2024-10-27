@@ -14,7 +14,7 @@ export default function Cart({
 }) {
   return (
     <>
-      {/* Metadata title */}
+      {/* Metadatos */}
       <Helmet>
         <title>Carrito - FrontLibros</title>
       </Helmet>
