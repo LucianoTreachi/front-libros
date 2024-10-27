@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import Hero from "../../common/hero/Hero";
-import ProductListContainer from "../productList/ProductListContainer";
+import ProductListContainer from "../../common/productList/ProductListContainer";
 
 export default function Home() {
   return (
