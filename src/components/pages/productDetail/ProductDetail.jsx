@@ -49,7 +49,7 @@ export default function ProductDetail({
                 <b>Categoría:</b> {selectedProduct.category}
               </p>
               <p>
-                <b>Precio:</b> $ {selectedProduct.price}
+                <b>Precio:</b> {selectedProduct.price} USD
               </p>
 
               {/* Si el stock es mayor 0, mostrar el contador. De lo contrario mostrar un mensaje. */}

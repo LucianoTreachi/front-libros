@@ -72,8 +72,9 @@ export default function Cart({
                         <b>Unidades:</b> {cartProduct.quantity}
                       </p>
                       <p>
-                        <b>Precio:</b> ${" "}
-                        {(cartProduct.price * cartProduct.quantity).toFixed(2)}
+                        <b>Precio:</b>{" "}
+                        {(cartProduct.price * cartProduct.quantity).toFixed(2)}{" "}
+                        USD
                       </p>
                       <button
                         className={styles.deleteProductButton}
@@ -87,7 +88,7 @@ export default function Cart({
                 })}
                 <div className={styles.priceContainer}>
                   <span className={styles.totalPrice} tabIndex={0}>
-                    Precio Total: {totalPrice.toFixed(2)} USD
+                    Precio total del carrito: <br /> {totalPrice.toFixed(2)} USD
                   </span>
                   <button
                     onClick={handleClearCart}

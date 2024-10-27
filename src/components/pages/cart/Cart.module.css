@@ -91,6 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .clearCartButton {
@@ -181,10 +182,5 @@
 
   .clearCartButton {
     width: 100%;
-  }
-
-  .priceContainer {
-    flex-direction: column-reverse;
-    gap: 4rem;
   }
 }
