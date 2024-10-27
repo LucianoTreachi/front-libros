@@ -32,7 +32,6 @@
 .availableStock {
   font-size: 1.4rem;
   color: var(--black);
-  margin-bottom: 2rem;
 }
 
 .addedStock,
@@ -40,17 +39,11 @@
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 2rem;
-}
-
-.outOfStock {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #7F2C05;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .containerButtons2 {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

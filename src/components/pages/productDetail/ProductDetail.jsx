@@ -51,15 +51,27 @@ export default function ProductDetail({
               <p>
                 <b>Precio:</b> $ {selectedProduct.price}
               </p>
-              <p>
-                <b>¿Cuántas unidades quieres?</b>
-              </p>
-              <CounterContainer
-                onAdd={onAdd}
-                stock={stock}
-                totalQuantity={totalQuantity}
-                productTitle={selectedProduct.title}
-              />
+
+              {/* Si el stock es mayor 0, mostrar el contador. De lo contrario mostrar un mensaje. */}
+              {stock > 0 ? (
+                <>
+                  <p>
+                    <b>¿Cuántas unidades quieres?</b>
+                  </p>
+
+                  <CounterContainer
+                    onAdd={onAdd}
+                    stock={stock}
+                    totalQuantity={totalQuantity}
+                    productTitle={selectedProduct.title}
+                  />
+                </>
+              ) : (
+                <p className={styles.outOfStockMessage} tabIndex={0}>
+                  Lo sentimos, por el momento no tenemos stock de este producto.
+                  Pronto repondremos más unidades.
+                </p>
+              )}
             </div>
           </div>
         </div>

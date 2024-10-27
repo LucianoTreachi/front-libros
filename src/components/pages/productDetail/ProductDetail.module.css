@@ -39,6 +39,13 @@
   opacity: .85;
 }
 
+.outOfStockMessage {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #7F2C05;
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 574px) {
   .section {
     padding: 4rem 2rem;

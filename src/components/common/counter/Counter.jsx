@@ -75,31 +75,23 @@ export default function Counter({
         </p>
       )}
 
-      {/* Si el stock es mayor 0, mostrar el botón de "Agregar al carrito". De lo contrario mostrar un mensaje. */}
-      {stock > 0 ? (
-        <div className={styles.containerButtons2}>
-          <button
-            className={`${styles.button} ${styles.addToCartButton}`}
-            onClick={() => onAdd(count)}
-            aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
-          >
-            Agregar al carrito
-          </button>
-          <button
-            id="goToCartButton"
-            className={`${styles.button} ${styles.goToCartButton}`}
-            aria-label={"Revisar el carrito."}
-            onClick={handleGoToCart}
-          >
-            Revisar el carrito
-          </button>
-        </div>
-      ) : (
-        <p className={styles.outOfStock}>
-          Lo sentimos, por el momento no tenemos stock de este producto. Pronto
-          repondremos más unidades.
-        </p>
-      )}
+      <div className={styles.containerButtons2}>
+        <button
+          className={`${styles.button} ${styles.addToCartButton}`}
+          onClick={() => onAdd(count)}
+          aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
+        >
+          Agregar al carrito
+        </button>
+        <button
+          id="goToCartButton"
+          className={`${styles.button} ${styles.goToCartButton}`}
+          aria-label={"Revisar el carrito."}
+          onClick={handleGoToCart}
+        >
+          Revisar el carrito
+        </button>
+      </div>
     </div>
   );
 }
