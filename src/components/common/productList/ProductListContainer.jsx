@@ -4,42 +4,38 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import ProductList from "./ProductList";
 
 export default function ProductListContainer() {
-  // Crear un estado para mostrar los productos
+  // Estado para almacenar los productos
   const [products, setProducts] = useState([]);
 
-  // Crear un estado para mostrar un loading
+  // Estado para controlar el loading
   const [isLoading, setIsLoading] = useState(true);
 
-  // Crear un estado para mostrar la categoría activa
+  // Estado para la categoría activa
   const [activeCategory, setActiveCategory] = useState("Todos");
 
+  // Realizar la consulta a Firestore
   useEffect(() => {
     // Traer la colección "products" de Firestore
     const productsCollection = collection(db, "products");
 
-    // Declarar una variable para la consulta
-    let consultation;
+    // Mostrar los productos según la categoría activa
+    const consultation =
+      activeCategory === "Todos"
+        ? productsCollection
+        : query(productsCollection, where("category", "==", activeCategory));
 
-    // Si activeCategory es "Todos", mostrar todos los productos
-    if (activeCategory === "Todos") {
-      consultation = productsCollection;
-    } 
-    // Si hay una categoría seleccionada, filtrar los productos por esa categoría
-    else {
-      consultation = query(
-        productsCollection,
-        where("category", "==", activeCategory)
-      );
-    }
+    // Activar loading antes de la consulta
+    setIsLoading(true);
 
-    // Realizar la consulta a Firestore
-    setIsLoading(true); // Activar loading antes de traer los datos
     getDocs(consultation)
       .then((response) => {
         const documents = response.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });
         setProducts(documents);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
       })
       .finally(() => {
         setIsLoading(false); // Desactivar loading después de traer los datos
