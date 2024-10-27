@@ -5,11 +5,11 @@ import { CartContext } from "../../../context/CartContext";
 import styles from "./CartWidget.module.css";
 
 export default function CartWidget() {
-  // Consumir la función getTotalCartWidgetNumber creada en CartContext
+  // Consumir el total de productos del contexto del carrito
   const { getTotalCartWidgetNumber } = useContext(CartContext);
 
-  // Guardar en una variable la función getTotalCartWidgetNumber
-  let totalCartWidgetNumber = getTotalCartWidgetNumber();
+  // Obtener el número total de productos en el carrito
+  const totalCartWidgetNumber = getTotalCartWidgetNumber();
 
   return (
     <div className={styles.container}>
