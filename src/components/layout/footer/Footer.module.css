@@ -6,17 +6,44 @@
 .container {
   max-width: 1400px;
   margin: auto;
+  text-align: center;
 }
 
 .paragraph {
+  font-size: 2rem;
   color: var(--white);
   opacity: .75;
-  font-weight: 300;
-  text-align: center;
+  font-weight: 600;
+}
+
+.paragraph:nth-child(3) {
+  font-weight: 400;
+}
+
+.link {
+  color: #ffdc55;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.link:hover {
+  opacity: 0.75;
 }
 
 @media screen and (max-width: 574px) {
   .footer {
     padding: 4rem 2rem;
+  }
+
+  .container {
+    text-align: initial;
+  }
+
+  .paragraph {
+    font-size: initial;
+  }
+
+  .link:hover {
+    opacity: 1;
   }
 }
