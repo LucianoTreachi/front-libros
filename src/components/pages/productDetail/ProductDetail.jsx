@@ -52,7 +52,7 @@ export default function ProductDetail({
                 <b>Precio:</b> {selectedProduct.price} USD
               </p>
 
-              {/* Si el stock es mayor 0, mostrar el contador. De lo contrario mostrar un mensaje. */}
+              {/* Si el stock es mayor 0, mostrar el contador. De lo contrario, mostrar un mensaje de sin stock */}
               {stock > 0 ? (
                 <>
                   <p>
