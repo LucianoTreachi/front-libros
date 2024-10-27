@@ -59,7 +59,7 @@ export default function Cart({
                       <div className={styles.containerImage}>
                         <Link
                           to={`/producto/${cartProduct.id}`}
-                          aria-label={`Ver producto: ${cartProduct.title}. Unidades agregadas: ${cartProduct.quantity}.`}
+                          aria-label={`Producto: ${cartProduct.title}. Unidades agregadas: ${cartProduct.quantity}.`}
                         >
                           <img
                             src={cartProduct.image}
