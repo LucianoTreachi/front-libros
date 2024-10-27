@@ -79,7 +79,9 @@ export default function Counter({
         <button
           className={`${styles.button} ${styles.addToCartButton}`}
           onClick={() => onAdd(count)}
-          aria-label={`Agregar al carrito el producto ${productTitle}. Unidades a agregar: ${count}.`}
+          aria-label={`Agregar al carrito: ${
+            count === 1 ? `una unidad` : `${count} unidades`
+          } del producto ${productTitle}`}
         >
           Agregar al carrito
         </button>
