@@ -15,7 +15,7 @@ export default function Navbar({ isOpen, toggleMenu }) {
           <button
             className={styles.closeMenuButton}
             onClick={toggleMenu}
-            aria-label="Cerrar Menú"
+            aria-label="Cerrar menú de navegación"
           >
             <AiOutlineClose />
           </button>
@@ -32,18 +32,19 @@ export default function Navbar({ isOpen, toggleMenu }) {
           </Link>
         </div>
 
-        {/* Cart button */}
+        {/* Cart */}
         <CartWidget />
 
         {/* Open menu button */}
         <button
           className={styles.openMenuButton}
           onClick={toggleMenu}
-          aria-label="Menú"
+          aria-label="Menú de navegación"
         >
           <AiOutlineMenu />
         </button>
       </nav>
+
       {/* Overlay */}
       <div
         className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
