@@ -251,16 +251,16 @@ export default function Credit() {
                           />
                           <h3>{cartProduct.title}</h3>
                           <p>
-                            ${" "}
                             {(cartProduct.price * cartProduct.quantity).toFixed(
                               2
-                            )}
+                            )}{" "}
+                            USD
                           </p>
                         </div>
                       );
                     })}
                     <h4 className={styles.totalPrice}>
-                      Precio Total: $ {totalPrice.toFixed(2)}
+                      Precio Total: {totalPrice.toFixed(2)} USD
                     </h4>
                   </div>
                 </div>

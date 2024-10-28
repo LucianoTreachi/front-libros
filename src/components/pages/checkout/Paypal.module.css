@@ -96,6 +96,7 @@ span {
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .containerProduct img {
@@ -111,9 +112,13 @@ span {
   width: 50%;
 }
 
+.containerProduct p {
+  font-size: 1.4rem;
+}
+
 .totalPrice {
   margin-top: 4rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: var(--color-text);
   text-align: right;
 }
