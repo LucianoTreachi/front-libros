@@ -12,7 +12,7 @@ export default function Counter({
 }) {
   const navigate = useNavigate();
 
-  // Función para navegar hacia la página /carrito y seleccionar el cart widget
+  // Navegar hacia la página /carrito y enfocar el widget del carrito
   function handleGoToCart() {
     navigate("/carrito");
 
@@ -42,7 +42,7 @@ export default function Counter({
         </button>
       </div>
 
-      {/* Cuando no hay ningún producto agregado, la variable totalQuantity llega como "undefined", por lo tanto muestra el mensaje de unidades disponibles */}
+      {/* Cuando no hay ningún producto agregado, la variable totalQuantity llega como "undefined", por lo tanto se mostrará el mensaje de unidades disponibles */}
       {typeof totalQuantity === "undefined" && (
         <p className={styles.availableStock}>Unidades Disponibles: {stock}</p>
       )}
@@ -75,6 +75,7 @@ export default function Counter({
         </p>
       )}
 
+      {/* Botones de Agregar y Revisar el carrito */}
       <div className={styles.containerButtons2}>
         <button
           className={`${styles.button} ${styles.addToCartButton}`}

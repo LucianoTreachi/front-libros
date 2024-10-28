@@ -7,23 +7,20 @@ export default function CounterContainer({
   totalQuantity,
   productTitle,
 }) {
-  // Crear un estado para mostrar el valor inicial del contador
+  // Estado inicial del contador
   const [count, setCount] = useState(1);
 
-  // Incrementar el contador mediante validaciones
+  // Incrementar el contador sin exceder el stock disponible
   function increment() {
-    if (count != 0 && count < stock) {
-      setCount(count + 1);
-    }
+    setCount((prevCount) => (prevCount < stock ? prevCount + 1 : prevCount));
   }
 
-  // Decrementar el contador mediante validaciones
+  // Decrementar el contador sin permitir valores menores a 1
   function decrement() {
-    if (count > 1) {
-      setCount(count - 1);
-    }
+    setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : prevCount));
   }
 
+  // Pasar todas las funciones y props al componente Counter
   return (
     <Counter
       count={count}
