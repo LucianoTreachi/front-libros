@@ -62,7 +62,7 @@
   border: 2px solid var(--dark-grey);
 }
 
-.containerProduct h3 {
+.containerProduct h2 {
   font-size: 1.7rem;
   color: var(--black);
   opacity: .85;
@@ -176,7 +176,7 @@
     align-items: initial;
   }
 
-  .containerProduct h3 {
+  .containerProduct h2 {
     width: 100%;
   }
 
