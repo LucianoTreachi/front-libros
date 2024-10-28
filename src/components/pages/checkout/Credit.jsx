@@ -45,9 +45,9 @@ export default function Credit() {
 
   // Enfocar el campo de nombre al cargar el componente
   useEffect(() => {
-    const inputName = document.getElementById("nombre");
-    if (inputName) {
-      inputName.focus();
+    const cardNumber = document.getElementById("cardNumber");
+    if (cardNumber) {
+      cardNumber.focus();
     }
   }, []);
 
@@ -144,41 +144,6 @@ export default function Credit() {
                   <div className={styles.col1}>
                     {/* Formulario */}
                     <form onSubmit={handleSubmit} className={styles.form}>
-                      {/* Campo Nombre */}
-                      <div className={styles.containerInput}>
-                        <label htmlFor="nombre">
-                          Nombre del titular de la tarjeta
-                        </label>
-                        <input
-                          type="text"
-                          id="nombre"
-                          name="nombre"
-                          required
-                          onChange={handleChange}
-                        />
-                      </div>
-                      {/* Campo Teléfono */}
-                      <div className={styles.containerInput}>
-                        <label htmlFor="phone">Teléfono</label>
-                        <input
-                          type="number"
-                          id="phone"
-                          name="phone"
-                          required
-                          onChange={handleChange}
-                        />
-                      </div>
-                      {/* Campo Correo electrónico */}
-                      <div className={styles.containerInput}>
-                        <label htmlFor="email">Correo electrónico</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          onChange={handleChange}
-                        />
-                      </div>
                       {/* Campo Número de tarjeta */}
                       <div className={styles.containerInput}>
                         <label htmlFor="cardNumber">
@@ -212,6 +177,41 @@ export default function Credit() {
                           type="number"
                           id="cvc"
                           name="cvc"
+                          required
+                          onChange={handleChange}
+                        />
+                      </div>
+                      {/* Campo Nombre */}
+                      <div className={styles.containerInput}>
+                        <label htmlFor="name">
+                          Nombre del titular de la tarjeta
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          onChange={handleChange}
+                        />
+                      </div>
+                      {/* Campo Teléfono */}
+                      <div className={styles.containerInput}>
+                        <label htmlFor="phone">Teléfono</label>
+                        <input
+                          type="number"
+                          id="phone"
+                          name="phone"
+                          required
+                          onChange={handleChange}
+                        />
+                      </div>
+                      {/* Campo Correo electrónico */}
+                      <div className={styles.containerInput}>
+                        <label htmlFor="email">Correo electrónico</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
                           required
                           onChange={handleChange}
                         />
