@@ -273,7 +273,7 @@ export default function Credit() {
             {/* Si el estado isSuccessModal es true, mostrar el componente successModal  */}
             {isSuccessModal && (
               <SuccessModal
-                title="Pago realizado correctamente"
+                heading="Pago realizado correctamente"
                 message="Tu número de seguimiento es:"
                 orderId={orderId}
                 onConfirm={navigateToHome}

@@ -89,7 +89,18 @@ export default function ProductDetailContainer() {
 
       {isSuccessModal && (
         <SuccessModal
-          title="Producto Agregado"
+          heading="¡Listo!"
+          added={
+            <>
+              {`Agregaste ${
+                totalQuantity === 1
+                  ? "una unidad del producto "
+                  : `${totalQuantity} unidades del producto `
+              }`}
+              <br />
+              <b>{selectedProduct.title}</b>
+            </>
+          }
           message="Revisa el carrito"
           onConfirm={handleCloseModal}
         />

@@ -88,7 +88,7 @@ export default function Contact({
             {/* Si el estado successModal es true, mostrar el componente successModal  */}
             {successModal && (
               <SuccessModal
-                title="Mensaje enviado correctamente"
+                heading="Mensaje enviado correctamente"
                 message="Revisaremos los datos y te contactaremos lo antes posible"
                 onConfirm={navigateToHome}
               />
