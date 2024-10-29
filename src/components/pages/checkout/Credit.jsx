@@ -20,21 +20,21 @@ export default function Credit() {
   // Consumir variables y funciones que vienen del contexto CartContext
   const { cartProducts, getTotalPrice, clearCart } = useContext(CartContext);
 
-  // En una variable guardar la función getQuantityById
+  // Obtener el precio total llamando a la función getTotalPrice
   let totalPrice = getTotalPrice();
 
-  // Crear un estado para mostrar el id de la orden de compra
+  // Estado para mostrar el id de la orden de compra
   const [orderId, setOrderId] = useState("");
 
-  // Crear un estado para mostrar el modal loader
+  // Estado para mostrar el modal loader
   const [isLoaderModal, setIsLoaderModal] = useState(false);
 
-  // Crear un estado para mostrar el modal success
+  // Estado para mostrar el modal success
   const [isSuccessModal, setIsSuccessModal] = useState(false);
 
-  // Crear un estado para rellenar los inputs
+  // Estado para rellenar los inputs
   const [data, setData] = useState({
-    nombre: "",
+    name: "",
     phone: "",
     email: "",
     cardNumber: "",
@@ -43,7 +43,7 @@ export default function Credit() {
     adress: "",
   });
 
-  // Enfocar el campo de nombre al cargar el componente
+  // Enfocar el campo de cardNumber al cargar el componente
   useEffect(() => {
     const cardNumber = document.getElementById("cardNumber");
     if (cardNumber) {
@@ -67,16 +67,16 @@ export default function Credit() {
     }
   }, [isSuccessModal]);
 
-  // Crear una función para rellenar los inputs
+  // Función que actualiza el estado data a medida que el usuario completa los campos del formulario
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  // Crear una función para enviar el formulario
+  // Función que envía el formulario para completar la compra
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Configurar un objeto para la orden de compra de un producto
+    // Crear un objeto con los datos del comprador, los productos del carrito, el total de la compra y una marca de tiempo (serverTimestamp)
     let order = {
       buyer: data,
       products: cartProducts,
@@ -84,7 +84,7 @@ export default function Credit() {
       date: serverTimestamp(),
     };
 
-    // Agregar la orden de compra en la base de datos Firestore y recuperar el id
+    // Insertar la orden en la colección creditOrders de Firestore, recuperando y guardando el orderId
     let ordersCollection = collection(db, "creditOrders");
     addDoc(ordersCollection, order).then((response) => setOrderId(response.id));
 
@@ -105,9 +105,9 @@ export default function Credit() {
     }, 4000);
   };
 
-  // Crear una función para limpiar el carrito, y volver a la parte superior del Home
   const navigate = useNavigate();
 
+  // Función para limpiar el carrito, y volver a la parte superior del Home
   const navigateToHome = () => {
     clearCart();
     navigate("/");
