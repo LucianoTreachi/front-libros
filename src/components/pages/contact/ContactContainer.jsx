@@ -3,36 +3,36 @@ import { useNavigate } from "react-router-dom";
 import Contact from "./Contact";
 
 export default function ContactContainer() {
-  // Crear un estado para rellenar los inputs
+  // Estado para rellenar los inputs
   const [data, setData] = useState({
     nombre: "",
     apellido: "",
     email: "",
   });
 
-  // Crear una función para rellenar los inputs
+  // Función para rellenar los inputs
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  // Crear un estado para mostrar el modal loader
-  const [loaderModal, setLoaderModal] = useState(false);
+  // Estado para mostrar el modal loader
+  const [isLoaderModal, setIsLoaderModal] = useState(false);
 
-  // Crear un estado para mostrar el modal success
-  const [successModal, setSuccessModal] = useState(false);
+  // Estado para mostrar el modal success
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
 
-  // Crear una función para cuando se envía el formulario
+  // Función para cuando se envía el formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoaderModal(true);
+    setIsLoaderModal(true);
 
     setTimeout(() => {
-      setLoaderModal(false);
-      setSuccessModal(true);
+      setIsLoaderModal(false);
+      setIsSuccessModal(true);
     }, 4000);
   };
 
-  // Crear una función que me permite volver a la parte superior del Home
+  // Función que redirige a Home, a la parte superior
   const navigate = useNavigate();
 
   const navigateToHome = () => {
@@ -44,8 +44,8 @@ export default function ContactContainer() {
     <Contact
       handleSubmit={handleSubmit}
       handleChange={handleChange}
-      loaderModal={loaderModal}
-      successModal={successModal}
+      isLoaderModal={isLoaderModal}
+      isSuccessModal={isSuccessModal}
       navigateToHome={navigateToHome}
     />
   );

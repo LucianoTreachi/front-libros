@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 import NavigateToTop from "../../../routes/NavigateToTop";
 import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
 import LoaderModal from "../../modals/loaderModal/LoaderModal";
@@ -8,10 +9,26 @@ import styles from "./Contact.module.css";
 export default function Contact({
   handleSubmit,
   handleChange,
-  loaderModal,
-  successModal,
+  isLoaderModal,
+  isSuccessModal,
   navigateToHome,
 }) {
+  // Enfocar el modal de carga cuando esté visible
+  useEffect(() => {
+    const loaderModalID = document.getElementById("loader-modal");
+    if (isLoaderModal && loaderModalID) {
+      loaderModalID.focus();
+    }
+  }, [isLoaderModal]);
+
+  // Enfocar el modal de éxito cuando esté visible
+  useEffect(() => {
+    const successModalID = document.getElementById("success-modal");
+    if (isSuccessModal && successModalID) {
+      successModalID.focus();
+    }
+  }, [isSuccessModal]);
+
   return (
     <>
       {/* Metadatos */}
@@ -82,11 +99,11 @@ export default function Contact({
               </div>
             </div>
 
-            {/* Si el estado loaderModal es true, mostrar el componente Loader  */}
-            {loaderModal && <LoaderModal message="Enviando el mensaje" />}
+            {/* Si el estado isLoaderModal es true, mostrar el componente LoaderModal */}
+            {isLoaderModal && <LoaderModal message="Enviando el mensaje" />}
 
-            {/* Si el estado successModal es true, mostrar el componente successModal  */}
-            {successModal && (
+            {/* Si el estado isSuccessModal es true, mostrar el componente SuccessModal */}
+            {isSuccessModal && (
               <SuccessModal
                 heading="Mensaje enviado correctamente"
                 message="Revisaremos los datos y te contactaremos lo antes posible"
