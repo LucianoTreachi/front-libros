@@ -1,0 +1,37 @@
+.containerButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button {
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 250px;
+  transition: .3s;
+}
+
+.button:hover {
+  opacity: .9;
+}
+
+.addToCartButton {
+  color: #ffffff;
+  background-color: var(--background-button);
+}
+
+.goToCartButton {
+  color: var(--background-button);
+  background-color: transparent;
+  border: 2px solid var(--background-button);
+}
+
+@media screen and (max-width: 574px) {
+  .button {
+    width: 100%;
+  }
+}

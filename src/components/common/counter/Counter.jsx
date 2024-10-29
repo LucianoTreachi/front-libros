@@ -1,27 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import AvailableStockMessage from "../availableStockMessage/AvailableStockMessage";
+import AddToCartButtons from "../addToCartButtons/AddToCartButtons";
 import styles from "./Counter.module.css";
 
 export default function Counter({
   count,
-  increment,
-  decrement,
   stock,
+  decrement,
+  increment,
   onAdd,
   totalQuantity,
   productTitle,
 }) {
-  const navigate = useNavigate();
-
-  // Navegar hacia la página /carrito y enfocar el widget del carrito
-  function handleGoToCart() {
-    navigate("/carrito");
-
-    const cartWidget = document.getElementById("cartWidget");
-    if (cartWidget) {
-      cartWidget.focus();
-    }
-  }
-
   return (
     <div>
       <div className={styles.containerButtons}>
@@ -42,59 +31,15 @@ export default function Counter({
         </button>
       </div>
 
-      {/* Cuando no hay ningún producto agregado, la variable totalQuantity llega como "undefined", por lo tanto se mostrará el mensaje de unidades disponibles */}
-      {typeof totalQuantity === "undefined" && (
-        <p className={styles.availableStock}>Unidades Disponibles: {stock}</p>
-      )}
-
-      {/* Si la variable totalQuantity es igual a 1, mostrar el siguiente mensaje */}
-      {totalQuantity === 1 && (
-        <>
-          <p className={styles.availableStock}>Unidades Disponibles: {stock}</p>
-          <p className={styles.addedStock}>
-            Agregaste una unidad. Revisa el carrito.
-          </p>
-        </>
-      )}
-
-      {/* Si la variable totalQuantity es mayor a 1, y menor al stock, mostrar el siguiente mensaje */}
-      {totalQuantity > 1 && totalQuantity < stock && (
-        <>
-          <p className={styles.availableStock}>Unidades Disponibles: {stock}</p>
-          <p className={styles.addedStock}>
-            Agregaste {totalQuantity} unidades. Revisa el carrito.
-          </p>
-        </>
-      )}
-
-      {/* Si la variable totalQuantity es igual al stock disponible, mostrar el siguiente mensaje */}
-      {totalQuantity === stock && (
-        <p className={styles.maximumStock}>
-          Agregaste la máxima cantidad de unidades disponibles. Revisa el
-          carrito.
-        </p>
-      )}
+      {/* Componente de mensaje de stock */}
+      <AvailableStockMessage totalQuantity={totalQuantity} stock={stock} />
 
       {/* Botones de Agregar y Revisar el carrito */}
-      <div className={styles.containerButtons2}>
-        <button
-          className={`${styles.button} ${styles.addToCartButton}`}
-          onClick={() => onAdd(count)}
-          aria-label={`Agregar al carrito: ${
-            count === 1 ? `una unidad` : `${count} unidades`
-          } del producto ${productTitle}`}
-        >
-          Agregar al carrito
-        </button>
-        <button
-          id="goToCartButton"
-          className={`${styles.button} ${styles.goToCartButton}`}
-          aria-label={"Revisar el carrito."}
-          onClick={handleGoToCart}
-        >
-          Revisar el carrito
-        </button>
-      </div>
+      <AddToCartButtons
+        onAdd={onAdd}
+        count={count}
+        productTitle={productTitle}
+      />
     </div>
   );
 }

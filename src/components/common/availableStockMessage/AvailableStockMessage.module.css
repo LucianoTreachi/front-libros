@@ -1,0 +1,12 @@
+.availableStockMessage {
+  font-size: 1.4rem;
+  color: var(--black);
+}
+
+.addedStockMessage,
+.maximumStockMessage {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 1rem;
+}
