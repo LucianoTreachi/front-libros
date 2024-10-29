@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "../components/layout/Layout";
+import Layout from "@components/layout/Layout";
 import { routes } from "./routes";
-import Error404 from "../components/pages/error404/Error404";
+import Error404 from "@components/pages/error404/Error404";
 
 export default function AppRouter() {
   return (

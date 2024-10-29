@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import Logo from "../../common/logo/Logo";
-import CartWidget from "../../common/cartWidget/CartWidget";
+import Logo from "@components/common/logo/Logo";
+import CartWidget from "@components/common/cartWidget/CartWidget";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ isOpen, toggleMenu }) {

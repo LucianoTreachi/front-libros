@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
-import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
+import NavigateToTop from "@routes/NavigateToTop";
+import GoHomeLink from "@components/common/goHomeLink/GoHomeLink";
 import styles from "./HowToBuy.module.css";
 
 export default function HowToBuy() {

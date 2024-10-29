@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "@context/CartContext";
+import ConfirmationModal from "@components/common/modals/confirmationModal/ConfirmationModal";
 import Cart from "./Cart";
-import ConfirmationModal from "../../modals/confirmationModal/ConfirmationModal";
 
 export default function CartContainer() {
   // Consumir variables y funciones que vienen del contexto CartContext

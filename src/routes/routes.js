@@ -1,10 +1,10 @@
-import Home from "../components/pages/home/Home";
-import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
-import HowToBuy from "../components/pages/howToBuy/HowToBuy";
-import ContactContainer from "../components/pages/contact/ContactContainer";
-import CartContainer from "../components/pages/cart/CartContainer";
-import Credit from "../components/pages/checkout/Credit";
-import Paypal from "../components/pages/checkout/Paypal";
+import Home from "@components/pages/home/Home";
+import ProductDetailContainer from "@components/pages/productDetail/ProductDetailContainer";
+import HowToBuy from "@components/pages/howToBuy/HowToBuy";
+import ContactContainer from "@components/pages/contact/ContactContainer";
+import CartContainer from "@components/pages/cart/CartContainer";
+import Credit from "@components/pages/checkout/Credit";
+import Paypal from "@components/pages/checkout/Paypal";
 
 export const routes = [
   {

@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet";
 import { BsFillCartFill } from "react-icons/bs";
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
+import NavigateToTop from "@routes/NavigateToTop";
+import GoHomeLink from "@components/common/goHomeLink/GoHomeLink";
 import styles from "./Cart.module.css";
 
 export default function Cart({

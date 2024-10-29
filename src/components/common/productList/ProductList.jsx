@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CardSkeleton from "../../common/cardSkeleton/CardSkeleton";
+import CardSkeleton from "@components/common/cardSkeleton/CardSkeleton";
 import styles from "./ProductList.module.css";
 
 export default function ProductList({

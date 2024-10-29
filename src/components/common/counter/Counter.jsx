@@ -1,5 +1,5 @@
-import AvailableStockMessage from "../availableStockMessage/AvailableStockMessage";
-import AddToCartButtons from "../addToCartButtons/AddToCartButtons";
+import AvailableStockMessage from "@components/common/availableStockMessage/AvailableStockMessage";
+import AddToCartButtons from "@components/common/addToCartButtons/AddToCartButtons";
 import styles from "./Counter.module.css";
 
 export default function Counter({

@@ -1,6 +1,6 @@
-import Loader from "../../common/loader/Loader";
-import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
-import CounterContainer from "../../common/counter/CounterContainer";
+import Loader from "@components/common/loader/Loader";
+import GoHomeLink from "@components/common/goHomeLink/GoHomeLink";
+import CounterContainer from "@components/common/counter/CounterContainer";
 import styles from "./ProductDetail.module.css";
 
 export default function ProductDetail({

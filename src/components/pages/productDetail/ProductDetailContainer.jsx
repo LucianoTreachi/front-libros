@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "@context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
+import NavigateToTop from "@routes/NavigateToTop";
+import SuccessModal from "@components/common/modals/successModal/SuccessModal";
 import ProductDetail from "./ProductDetail";
-import NavigateToTop from "../../../routes/NavigateToTop";
-import SuccessModal from "../../modals/successModal/SuccessModal";
 
 export default function ProductDetailContainer() {
   // Desestructurar funciones del contexto CartContext para gestionar el carrito

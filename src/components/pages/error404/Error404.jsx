@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
+import GoHomeLink from "@components/common/goHomeLink/GoHomeLink";
 import styles from "./Error404.module.css";
 
 export default function Error404() {

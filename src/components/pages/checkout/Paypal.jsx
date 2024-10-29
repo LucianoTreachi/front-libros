@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
-import { CartContext } from "../../../context/CartContext";
-import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "@context/CartContext";
 import { db } from "../../../firebaseConfig";
 import {
   addDoc,
@@ -10,10 +10,10 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
-import NavigateToTop from "../../../routes/NavigateToTop";
-import GoBackButton from "../../common/goBackButton/GoBackButton";
-import LoaderModal from "../../modals/loaderModal/LoaderModal";
-import SuccessModal from "../../modals/successModal/SuccessModal";
+import NavigateToTop from "@routes/NavigateToTop";
+import GoBackButton from "@components/common/goBackButton/GoBackButton";
+import LoaderModal from "@components/common/modals/loaderModal/LoaderModal";
+import SuccessModal from "@components/common/modals/successModal/SuccessModal";
 import styles from "./Paypal.module.css";
 
 export default function Paypal() {

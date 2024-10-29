@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
-import NavigateToTop from "../../../routes/NavigateToTop";
-import GoHomeLink from "../../common/goHomeLink/GoHomeLink";
-import LoaderModal from "../../modals/loaderModal/LoaderModal";
-import SuccessModal from "../../modals/successModal/SuccessModal";
+import NavigateToTop from "@routes/NavigateToTop";
+import GoHomeLink from "@components/common/goHomeLink/GoHomeLink";
+import LoaderModal from "@components/common/modals/loaderModal/LoaderModal";
+import SuccessModal from "@components/common/modals/successModal/SuccessModal";
 import styles from "./Contact.module.css";
 
 export default function Contact({
