@@ -88,6 +88,7 @@ export default function CartContainer() {
         handleDeleteProduct={handleDeleteProduct}
         totalPrice={totalPrice}
       />
+
       {/* Si el estado isConfirmationModal es true, mostrar el componente ConfirmationModal */}
       {isConfirmationModal && (
         <ConfirmationModal
