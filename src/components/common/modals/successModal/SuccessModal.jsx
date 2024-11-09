@@ -1,5 +1,6 @@
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import styles from "./SuccessModal.module.css";
+import FocusTrap from "@components/common/focusTrap/FocusTrap";
 
 export default function SuccessModal({
   heading,
@@ -11,21 +12,26 @@ export default function SuccessModal({
   return (
     <>
       <div className={styles.modalBackdrop}>
-        <div id="success-modal" className={styles.modalContent} tabIndex={-1}>
-          <div className={styles.containerIcon}>
-            <AiOutlineCheckCircle className={styles.icon} aria-hidden="true" />
+        <FocusTrap onConfirm={onConfirm}>
+          <div className={styles.modalContent}>
+            <div className={styles.containerIcon}>
+              <AiOutlineCheckCircle
+                className={styles.icon}
+                aria-hidden="true"
+              />
+            </div>
+            <p className={styles.heading}>{heading}</p>
+            <span className={styles.added}>{added}</span>
+            <p className={styles.message}>
+              {message} <br /> <b>{orderId}</b>
+            </p>
+            <div className={styles.containerButton}>
+              <button onClick={onConfirm} className={styles.closeModalButton}>
+                Salir
+              </button>
+            </div>
           </div>
-          <p className={styles.heading}>{heading}</p>
-          <span className={styles.added}>{added}</span>
-          <p className={styles.message}>
-            {message} <br /> <b>{orderId}</b>
-          </p>
-          <div className={styles.containerButton}>
-            <button onClick={onConfirm} className={styles.closeModalButton}>
-              Salir
-            </button>
-          </div>
-        </div>
+        </FocusTrap>
       </div>
     </>
   );

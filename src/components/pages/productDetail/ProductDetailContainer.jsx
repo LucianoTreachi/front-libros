@@ -37,14 +37,6 @@ export default function ProductDetailContainer() {
     });
   }, [id]);
 
-  useEffect(() => {
-    // Enfocar el modal de éxito cuando esté visible
-    const successModalID = document.getElementById("success-modal");
-    if (isSuccessModal && successModalID) {
-      successModalID.focus();
-    }
-  }, [isSuccessModal]);
-
   // Cerrar el modal y enfocar el botón "Revisar el carrito"
   const handleCloseModal = () => {
     setIsSuccessModal(false);

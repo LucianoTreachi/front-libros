@@ -59,14 +59,6 @@ export default function Credit() {
     }
   }, [isLoaderModal]);
 
-  // Enfocar el modal de éxito cuando esté visible
-  useEffect(() => {
-    const successModalID = document.getElementById("success-modal");
-    if (isSuccessModal && successModalID) {
-      successModalID.focus();
-    }
-  }, [isSuccessModal]);
-
   // Función que actualiza el estado data a medida que el usuario completa los campos del formulario
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });

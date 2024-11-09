@@ -21,14 +21,6 @@ export default function Contact({
     }
   }, [isLoaderModal]);
 
-  // Enfocar el modal de éxito cuando esté visible
-  useEffect(() => {
-    const successModalID = document.getElementById("success-modal");
-    if (isSuccessModal && successModalID) {
-      successModalID.focus();
-    }
-  }, [isSuccessModal]);
-
   return (
     <>
       {/* Metadatos */}

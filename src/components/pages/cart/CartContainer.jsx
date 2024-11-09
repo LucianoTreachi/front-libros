@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "@context/CartContext";
 import ConfirmationModal from "@components/common/modals/confirmationModal/ConfirmationModal";
 import Cart from "./Cart";
@@ -68,14 +68,6 @@ export default function CartContainer() {
     setIsConfirmationModal(false);
     focusPayLink();
   };
-
-  useEffect(() => {
-    // Enfocar el modal de confirmación cuando esté visible
-    const confirmationModalID = document.getElementById("confirmation-modal");
-    if (isConfirmationModal && confirmationModalID) {
-      confirmationModalID.focus();
-    }
-  }, [isConfirmationModal]);
 
   // Guardar en una variable la función getTotalPrice que viene de cartContext
   let totalPrice = getTotalPrice();
