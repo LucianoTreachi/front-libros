@@ -1,18 +1,46 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/LucianoTreachi/Ecommerce-FrontLibros/main/readmeBanner.jpg" width="100%" alt="Banner"/>
-</div>
+# FrontLibros: Descubre los mejores libros de Desarrollo Frontend
 
-### ✅ Proyecto
+**FrontLibros** es una tienda en línea que ofrece libros digitales sobre Desarrollo Frontend.
 
-- Diseñé y desarrollé un e-commerce de libros de Desarrollo Frontend. La web es 100% responsive, se adapta a cualquier dispositivo. Las imágenes se alojan en Cloudinary, servicio de gestión en la nube. La app se conecta a Firebase para manejo de stock y seguimiento de compra.
+## Vista previa
 
-### ⚡ Tecnologías Utilizadas
+[![Captura de pantalla del proyecto](https://i.postimg.cc/9FC2RjgP/website.jpg)](https://postimg.cc/K4qwwC24)
 
-- Vite + React Js
-- CSS Modules
-- Cloudinary
-- Firebase
+## Características
 
-### 👽 Autor
+- **Filtro de categorías:** Facilita la búsqueda de libros por tecnología.
+- **Ver carrito:** Permite consultar el contenido del carrito de compras.
+- **Agregar producto:** Añade libros al carrito con un solo clic.
+- **Eliminar producto:** Elimina libros del carrito de manera sencilla.
+- **Notificación mediante modales:** Recibe notificaciones al agregar o eliminar productos, y tras una compra exitosa.
+- **Simulación de compra:** Simula el proceso de compra.
+- **Testeado con lectores de pantalla:** Asegura una experiencia accesible para todo tipo de usuarios.
 
-- Luciano Treachi
+## Accesibilidad
+
+**FrontLibros** garantiza una experiencia de compra accesible, siguiendo las pautas de WCAG (Web Content Accessibility Guidelines). Para poder comprobar la accesibilidad del sitio, es necesario contar con un lector de pantalla como:
+
+- **NVDA:** (instalable para Windows, gratuito)
+- **Narrador de Windows:** (nativo de Windows)
+- **TalkBack:** (nativo de Android)
+- **VoiceOver:** (nativo de IOS y macOS)
+
+## Explora el sitio web
+
+Accede aquí → [FrontLibros](https://ecommerce-front-libros.vercel.app/)
+
+## Tecnologías utilizadas
+
+- **Vite:** Herramienta de construcción rápida.
+- **React 18:** Biblioteca para construir interfaces de usuario interactivas.
+- **CSS Modules:** Estilización de forma modular y encapsulada.
+- **Cloudinary:** Alojamiento y gestión de imágenes.
+
+## Desarrollado por
+
+**Luciano Treachi**
+
+Soy un Desarrollador Frontend dedicado a crear soluciones web eficientes, accesibles, intuitivas y fáciles de usar que potencian la experiencia del usuario.
+
+[![Sitio Web](https://img.shields.io/badge/Sitio_Web-black?style=for-the-badge&logoColor=white)](https://lucianotreachi.vercel.app/)
+[![linkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logoColor=white)](https://www.linkedin.com/in/luciano-treachi/)
