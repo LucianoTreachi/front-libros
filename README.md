@@ -27,7 +27,7 @@
 
 ## Explora el sitio web
 
-Accede aquí → [FrontLibros](https://ecommerce-front-libros.vercel.app/)
+Accede aquí → [FrontLibros](https://frontlibros.vercel.app/)
 
 ## Tecnologías utilizadas
 
