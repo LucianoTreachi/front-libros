@@ -24,7 +24,7 @@
 
 ## Accesibilidad
 
-**FrontLibros** garantiza una experiencia de compra accesible, siguiendo las pautas de WCAG (Web Content Accessibility Guidelines). Para poder comprobar la accesibilidad del sitio, es necesario contar con un lector de pantalla como:
+**FrontLibros** garantiza una experiencia de compra accesible siguiendo las Pautas de Accesibilidad para el Contenido Web (WCAG). Para poder comprobar la accesibilidad del sitio, es necesario contar con un lector de pantalla como:
 
 - **NVDA:** Instalable para Windows, gratuito.
 
