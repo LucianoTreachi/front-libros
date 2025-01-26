@@ -4,7 +4,7 @@
 
 ## Vista previa
 
-[![Captura de pantalla del proyecto](https://i.postimg.cc/qqJPm96G/preview.png)](https://postimg.cc/xJZp8pRk)
+![Vista previa del sitio](public/readme-preview1.jpg)
 
 ## Características
 
