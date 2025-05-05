@@ -17,7 +17,7 @@ export default function Hero() {
         <div>
           <picture>
             <source
-              media="(max-width: 574px)"
+              media="(max-width: 36rem)"
               srcSet="https://res.cloudinary.com/dwqk2mkgh/image/upload/f_auto,q_auto/w_500/v1687112700/ecommerce-libros/mockup-libros_ri6oof.jpg"
             />
             <img

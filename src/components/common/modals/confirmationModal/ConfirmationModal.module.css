@@ -19,7 +19,7 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  width: 500px;
+  width: 50rem;
   max-width: 90%;
   max-height: 90%;
   overflow: auto;
@@ -71,7 +71,8 @@
   background-color: #ff002b;
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .containerButtons {
     flex-direction: column;
   }

@@ -41,7 +41,7 @@ export default function ProductList({
           {products.map((product) => (
             <Link to={`/producto/${product.id}`} key={product.id}>
               <picture>
-                <source media="(max-width: 574px)" srcSet={product.image300} />
+                <source media="(max-width: 36rem)" srcSet={product.image300} />
                 <img
                   src={product.image}
                   alt={`${product.title}. Autor ${product.author}.`}

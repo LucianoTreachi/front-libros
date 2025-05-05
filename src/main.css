@@ -62,9 +62,8 @@ p {
   }
 }
 
-/* RESPONSIVE DESIGN */
-
-@media screen and (max-width: 320px) {
+/* 320px */
+@media (max-width: 20em) {
   html {
     font-size: 55%;
   }

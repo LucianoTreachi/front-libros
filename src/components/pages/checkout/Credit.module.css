@@ -96,7 +96,7 @@
 }
 
 .containerProduct img {
-  width: 30px;
+  width: 3rem;
   border-radius: .5rem;
   border: 1px solid var(--dark-grey);
 }
@@ -119,14 +119,16 @@
   text-align: right;
 }
 
-@media screen and (max-width: 700px) {
+/* 864px */
+@media (max-width: 54em) {
   .products {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .section {
     padding: 4rem 2rem;
   }

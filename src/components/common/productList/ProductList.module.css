@@ -3,7 +3,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 140rem;
   margin: auto;
 }
 
@@ -29,7 +29,7 @@
   border-radius: 1rem;
   border: 2px solid #ccc;
   background-color: white;
-  width: 150px;
+  width: 15rem;
 }
 
 .selectCategory:focus {
@@ -57,13 +57,15 @@
   transform: scale(1.02);
 }
 
-@media screen and (max-width: 850px) {
+/* 864px */
+@media (max-width: 54em) {
   .shop {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .section {
     padding: 4rem 2rem;
   }

@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 100rem;
   margin: auto;
   animation: var(--animation-fade-in);
 }
@@ -31,7 +31,8 @@
   color: var(--color-text);
 }
 
-@media screen and (max-width: 820px) {
+/* 864px */
+@media (max-width: 54em) {
   .row {
     display: grid;
     grid-template-columns: 1fr;
@@ -43,7 +44,8 @@
   }
 }
 
-@media screen and (max-width: 574px) {
+/* 576px */
+@media (max-width: 36em) {
   .section {
     padding: 4rem 2rem;
   }
